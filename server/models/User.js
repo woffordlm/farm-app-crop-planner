@@ -20,12 +20,12 @@ const userSchema = new Schema(
       required: true,
       minlength: 5
     },
-    allPlantings: [
-        {
-          type: Schema.Types.ObjectId,
-          ref: 'Planting'
-        }
-      ]
+    // allPlantings: [
+    //     {
+    //       type: Schema.Types.ObjectId,
+    //       ref: 'Planting'
+    //     }
+    //   ]
   },
   {
     toJSON: {

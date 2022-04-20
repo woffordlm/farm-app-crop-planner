@@ -17,7 +17,7 @@ const plantingSchema = new Schema(
       required: true
     },
     harvestDate: {
-      type: String,
+      type: Date,
       required: true,
         
       }
