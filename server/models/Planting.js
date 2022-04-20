@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const dateFormat = require('../utils/dateFormat');
+// const dateFormat = require('../utils/dateFormat');
 
 
 const plantingSchema = new Schema(
@@ -10,15 +10,16 @@ const plantingSchema = new Schema(
     },
     DTM: {
       type: Number,
+      required: true
     },
     username: {
       type: String,
       required: true
     },
     harvestDate: {
-        type: Date,
-        required: true,
-        get: timestamp => dateFormat(timestamp)
+      type: String,
+      required: true,
+        
       }
   },
   {
@@ -27,9 +28,9 @@ const plantingSchema = new Schema(
     }
   }
 );
-plantingSchema.virtual('plantingDate').get(function() {
-  return this.harvestDate - DTM ;
-});
+// plantingSchema.virtual('plantingDate').get(function() {
+//   return this.harvestDate - DTM ;
+// });
 
 
 const Planting = model('Planting', plantingSchema);

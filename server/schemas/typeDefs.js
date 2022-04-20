@@ -1,17 +1,19 @@
-const {
-gql
-} = require('apollo-server-express');
+const {gql} = require('apollo-server-express');
 
 const typeDefs = gql `
     type User {
         _id: ID
         username: String
         email: String
+        
+    }    
     type Planting {
         _id: ID
+        cropType: String
+        DTM: Int
         harvestDate: String
         username: String
-        plantingDate: Int
+        
     }
     type Query {
         me: User
@@ -19,8 +21,7 @@ const typeDefs = gql `
     type Mutation {
         login(email: String!, password: String!): User
         addUser(username: String!, email: String!, password: String!): User
-        addPlanting(cropType: String!, havestDate: Date!): Planting
-
+        addPlanting(cropType: String!,username: String!, DTM: Int!, harvestDate: String!): Planting
     }`
 module.exports = typeDefs;
 
@@ -29,3 +30,8 @@ module.exports = typeDefs;
 //     token: ID!
 //     user: User
 //       }
+
+// allPlantings: [Planting]
+// harvestDate: String
+// havestDate: String!
+
