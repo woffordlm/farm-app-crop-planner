@@ -7,17 +7,25 @@ const typeDefs = gql `
         _id: ID
         username: String
         email: String
-
-    type Auth {
-        token: ID!
-        user: User
-          }
+    type Planting {
+        _id: ID
+        harvestDate: String
+        username: String
+        plantingDate: Int
+    }
     type Query {
         me: User
     }
-
     type Mutation {
-        login(email: String!, password: String!): Auth
-        addUser(username: String!, email: String!, password: String!): Auth
+        login(email: String!, password: String!): User
+        addUser(username: String!, email: String!, password: String!): User
+        addPlanting(cropType: String!, havestDate: Date!): Planting
+
     }`
 module.exports = typeDefs;
+
+
+// type Auth {
+//     token: ID!
+//     user: User
+//       }

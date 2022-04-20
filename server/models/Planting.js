@@ -1,4 +1,6 @@
 const { Schema, model } = require('mongoose');
+const dateFormat = require('../utils/dateFormat');
+
 
 const plantingSchema = new Schema(
   {
@@ -6,19 +8,18 @@ const plantingSchema = new Schema(
       type: String,
       required: 'You need to pick a vegetable!',
     },
+    DTM: {
+      type: Number,
+    },
     username: {
       type: String,
       required: true
     },
     harvestDate: {
         type: Date,
-        // default: Date.now,
+        required: true,
         get: timestamp => dateFormat(timestamp)
-      }, 
-    desiredYield: {
-        type: String,
-        required: 'You need to pick a desired unit!',
-    }
+      }
   },
   {
     toJSON: {
@@ -26,8 +27,11 @@ const plantingSchema = new Schema(
     }
   }
 );
+plantingSchema.virtual('plantingDate').get(function() {
+  return this.harvestDate - DTM ;
+});
 
 
-const Planting = model('Thought', plantingSchema);
+const Planting = model('Planting', plantingSchema);
 
 module.exports = Planting;
