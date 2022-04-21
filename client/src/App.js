@@ -1,15 +1,19 @@
-import "./App.css";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
   createHttpLink,
-} from "@apollo/client";
-import { setContext } from "@apollo/client/link/context";
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
 
-import Header from "./Components/Header";
-import Sidebar from "./Components/Sidebar";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Signup from "./pages/signup";
+
+// import Header from "./Components/Header";
+// import Sidebar from "./Components/Sidebar";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -34,12 +38,13 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className="App">
-          <header className="App-header">
-            <Header />
-            {/* <Sidebar> </Sidebar>{" "} */}
-          </header>{" "}
-        </div>{" "}
+      <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/signup" component={Signup} />
+              {/* <Route exact path="/thought/:id" component={SingleThought} /> */}
+              {/* <Route component={NoMatch} /> */}
+            </Switch>
       </Router>
     </ApolloProvider>
   );

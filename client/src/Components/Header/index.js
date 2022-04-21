@@ -6,11 +6,7 @@ import {
   Navbar,
   Container,
   Offcanvas,
-  Nav, 
-  NavDropdown,
-  Form,
-  FormControl,
-  Button} from "react-bootstrap"
+  Nav} from "react-bootstrap"
 
 
 const Header = () => {
@@ -35,8 +31,8 @@ const Header = () => {
       </Offcanvas.Header>
       <Offcanvas.Body>
         <Nav className="justify-content-end flex-grow-1 pe-3">
-          <Nav.Link href="#action1">Home</Nav.Link>
-          <Nav.Link href="#action2">Link</Nav.Link>
+          <Nav.Link href="/signup">Signup</Nav.Link>
+          <Nav.Link href="/login">Login</Nav.Link>
         </Nav>
       </Offcanvas.Body>
     </Navbar.Offcanvas>
