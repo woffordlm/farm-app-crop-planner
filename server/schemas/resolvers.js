@@ -40,11 +40,9 @@ const resolvers = {
           const individualPlanting = await Planting.create({ ...args,});
           console.log('individualPlanting:', individualPlanting)
           return individualPlanting
-      
       },
     }
   };
-  
   module.exports = resolvers;
   
 
