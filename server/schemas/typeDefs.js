@@ -21,7 +21,7 @@ const typeDefs = gql `
     type Mutation {
         login(email: String!, password: String!): User
         addUser(username: String!, email: String!, password: String!): User
-        addPlanting(cropType: String!,username: String!, DTM: Int!, harvestDate: Date!): Planting
+        addPlanting(cropType: String!,username: String!, DTM: Int!, harvestDate: String!): Planting
     }`
 module.exports = typeDefs;
 

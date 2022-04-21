@@ -17,9 +17,8 @@ const plantingSchema = new Schema(
       required: true
     },
     harvestDate: {
-      type: Date,
+      type: String,
       required: true,
-        
       }
   },
   {
@@ -31,7 +30,6 @@ const plantingSchema = new Schema(
 // plantingSchema.virtual('plantingDate').get(function() {
 //   return this.harvestDate - DTM ;
 // });
-
 
 const Planting = model('Planting', plantingSchema);
 
