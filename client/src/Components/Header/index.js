@@ -1,7 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import Auth from '../../utils/auth';
+import "./index.css"
+import {
+  Navbar,
+  Container,
+  Offcanvas,
+  Nav, 
+  NavDropdown,
+  Form,
+  FormControl,
+  Button} from "react-bootstrap"
+
 
 const Header = () => {
   const logout = event => {
@@ -10,13 +20,34 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-secondary mb-4 py-2 flex-row align-center">
-      <div className="container flex-row justify-space-between-lg justify-center align-center">
-        <Link to="/">
-          <h1>Dirty Plans</h1>
-        </Link>
+    <header className="container">
+     <Navbar bg="light" expand={false}>
+  <Container fluid>
+    <Navbar.Brand href="#">Crop Planner</Navbar.Brand>
+    <Navbar.Toggle aria-controls="offcanvasNavbar" />
+    <Navbar.Offcanvas
+      id="offcanvasNavbar"
+      aria-labelledby="offcanvasNavbarLabel"
+      placement="end"
+    >
+      <Offcanvas.Header closeButton>
+        <Offcanvas.Title id="offcanvasNavbarLabel">Crop Planner</Offcanvas.Title>
+      </Offcanvas.Header>
+      <Offcanvas.Body>
+        <Nav className="justify-content-end flex-grow-1 pe-3">
+          <Nav.Link href="#action1">Home</Nav.Link>
+          <Nav.Link href="#action2">Link</Nav.Link>
+        </Nav>
+      </Offcanvas.Body>
+    </Navbar.Offcanvas>
+  </Container>
+</Navbar>
 
-        <nav className="text-center">
+      
+      {/* <div classNameName="row"> */}
+      
+
+        {/* <nav classNameName="text-center col">
           {Auth.loggedIn() ? (
             <>
               <Link to="/profile">Me</Link>
@@ -31,7 +62,7 @@ const Header = () => {
             </>
           )}
         </nav>
-      </div>
+      </div> */}
     </header>
   );
 };
