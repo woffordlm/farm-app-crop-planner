@@ -17,6 +17,7 @@ const resolvers = {
   
     Mutation: {
       addUser: async (parent, args) => {
+        console.log('args:', args)
         const user = await User.create(args);
         const token = signToken(user);
         return { token, user };
@@ -40,11 +41,9 @@ const resolvers = {
           const individualPlanting = await Planting.create({ ...args,});
           console.log('individualPlanting:', individualPlanting)
           return individualPlanting
-      
       },
     }
   };
-  
   module.exports = resolvers;
   
 
