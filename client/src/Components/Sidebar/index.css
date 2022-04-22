@@ -31,20 +31,21 @@
 } */
 
 
- #sidebar {
-        position: fixed;
-        width: 220px;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        min-height: 100vh !important;
-        z-index: 100;
-        padding: 0px 0 0;
-        box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-    }
+#sidebar {
+    position: absolute;
+    width: 220px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    min-height: 100vh !important;
+    z-index: 100;
+    padding: 0px 0 0;
+}
 
 #sidebar .pro-sidebar {
     height: 100vh;
+    color: black;
+    text-align: center;
 }
 
 #sidebar .closemenu {
@@ -68,6 +69,7 @@
 #sidebar .pro-sidebar.collapsed {
     width: 80px;
     min-width: 80px;
+    text-align: center;
 }
 
 #sidebar .pro-sidebar-inner {

@@ -7,10 +7,10 @@ import {
     SidebarContent
 } from 'react-pro-sidebar';
 
-import { FaList, FaRegHeart } from "react-icons/fa";
+import { FaList } from "react-icons/fa";
 import { FiHome, FiLogOut, FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
-import { RiPencilLine } from "react-icons/ri";
 import { BiCog } from "react-icons/bi";
+import { GiCorn } from 'react-icons/gi';
 
 import 'react-pro-sidebar/dist/css/styles.css';
 import '../Sidebar/index.css';
@@ -30,7 +30,7 @@ const Sidebar = () => {
             <ProSidebar collapsed={menuCollapse}>
                 <SidebarHeader>
                 <div className='logoText'>
-                    <p>{menuCollapse ? 'Logo' : 'Big Logo'}</p>
+                    {menuCollapse ? <p><GiCorn/></p> : <p><GiCorn/>  Crop App</p>}
                 </div>
                 <div className='closemenu' onClick={menuIconClick}>
                     {menuCollapse ? (
@@ -45,7 +45,7 @@ const Sidebar = () => {
                         <MenuItem active={true} icon={<FiHome />}>
                             Home
                         </MenuItem>
-                        <MenuItem active={true} icon={<FaList />}>Category</MenuItem>
+                        <MenuItem active={true} icon={<FaList />}>Crop Guide</MenuItem>
                         <MenuItem active={true} icon={<BiCog />}>Settings</MenuItem>
                     </Menu>
                 </SidebarContent>
