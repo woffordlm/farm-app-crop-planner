@@ -1,12 +1,12 @@
 import {Nav} from 'react-bootstrap';
-import '../Sidebar/index.css';
+// import '../Sidebar/index.css';
 import './index.css'
 
 const Sidebar = props => {
     return (
         <>
       
-            <Nav className='col2-md-1 d-none d-md-block bg-light sidebar'
+            <Nav className='col2 d-none d-md-block bg-light sidebar'
             activeKey='/home'
             onSelect={selectedKey => alert(`selected ${selectedKey}`)}
             >

@@ -9,9 +9,8 @@ import {
 import { setContext } from "@apollo/client/link/context";
 
 import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Signup from "./pages/signup";
 import Header from "./Components/Header";
+import Sidebar from "./Components/Sidebar";
 
 
 const httpLink = createHttpLink({
@@ -42,11 +41,9 @@ function App() {
           <div className="container">
             <Routes>
               <Route exact path="/" component={Home} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/signup" component={Signup} />
             </Routes>
           </div>
-          {/* <Sidebar /> */}
+          <Sidebar />
         </div>
       </Router>
     </ApolloProvider>
