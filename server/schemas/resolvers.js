@@ -8,8 +8,8 @@ const resolvers = {
         if (context.user) {
           const userData = await User.findOne({ _id: context.user._id })
             .select('-__v -password')
-            .populate('thoughts')
-            .populate('friends');
+            // .populate('thoughts')
+            // .populate('friends');
           return userData;
         }
     }
@@ -42,6 +42,11 @@ const resolvers = {
           console.log('individualPlanting:', individualPlanting)
           return individualPlanting
       },
+      // allPlantings: async (parent, { username }) => {
+      //   const params = username ? { username } : {};
+      //   return Planting.find(params).sort({ createdAt: -1 });
+      // }
+      
     }
   };
   module.exports = resolvers;

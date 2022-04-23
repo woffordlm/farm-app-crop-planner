@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Backdrop from "../Backdrop";
+import "./index.css"
 
 const dropIn = {
     hidden: {
@@ -53,7 +54,7 @@ const Addplanting = ({ handleClose, text }) => {
                 </form>
                 
                 <br></br>
-                <button className="close-button" onClick={handleClose}>Close</button>
+                <button className="plant-button close-button " onClick={handleClose}>Close</button>
             </motion.div>
         </Backdrop>
     );
