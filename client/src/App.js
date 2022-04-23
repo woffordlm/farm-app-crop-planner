@@ -12,8 +12,9 @@ import Home from "./pages/Home";
 // import Header from "./Components/Header";
 import Sidebar from "./Components/Sidebar";
 import PageTabs from "./Components/Tabs";
-// import { QUERY_CROPREFERENCE } from "./utils/queries";
-
+import { QUERY_CROPREFERENCE } from "./utils/queries";
+import { useQuery } from '@apollo/client';
+// import {QUERY_CROPREFERENCE} from '../src/utils/queries'
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
@@ -43,7 +44,7 @@ function App() {
           {/* <Header /> */}
           <div className="container">
             <Routes>
-              <Route exact path="/" component={Home} />
+              <Route exact path="/" element={<Home/>} />
             </Routes>
           </div>
           <PageTabs />
