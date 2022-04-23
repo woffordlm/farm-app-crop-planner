@@ -1,5 +1,6 @@
 // import React, { useEffect } from "react";
 
+
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import {
   ApolloClient,
@@ -8,11 +9,11 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
-import Home from "./pages/Home";
 import Header from "./Components/Header";
 import Sidebar from "./Components/Sidebar";
 import PageTabs from "./Components/Tabs";
-// import { QUERY_CROPREFERENCE } from "./utils/queries";
+import Home from './pages/Home'
+
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -34,20 +35,19 @@ const client = new ApolloClient({
 });
 
 function App() {
- 
+  
 
   return (
     <ApolloProvider client={client}>
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
-          {/* <Header /> */}
+         {/* <Header /> */}
           <div className="container">
-          
             <Routes>
-              <Route exact path="/" component={Home} />
+              <Route exact path="/" element={<Home />} />
             </Routes>
           </div>
-          <PageTabs />
+          <PageTabs /> 
           <Sidebar />
         </div>
       </Router>

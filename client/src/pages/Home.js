@@ -5,8 +5,9 @@ import {QUERY_CROPREFERENCE} from '../utils/queries'
 import {Button} from "react-bootstrap"
 function Home() {
 
-  const {data} = useQuery(QUERY_CROPREFERENCE);
-  console.log('data:', data)
+  const {data, error} = useQuery(QUERY_CROPREFERENCE);
+  console.log('data:', data);
+ 
   // const { data: userData } = useQuery(QUERY_ME);
 
 

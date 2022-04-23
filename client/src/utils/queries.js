@@ -24,7 +24,8 @@ query Query {
     harvestwindow
   }
 }
-`
+`;
+
 export const QUERY_PLANTINGS= gql`
   query allPlantings($username: String) {
     allPlantings(username: $username) {
