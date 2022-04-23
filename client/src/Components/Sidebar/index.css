@@ -1,16 +1,38 @@
-/* .sidebar {
+ .pro-sidebar {
     position: fixed;
-    top: 0;
+    top: -48px;
     bottom: 0;
-    left: 0;
-    min-height: 100vh !important;
-    min-width: 100px;
+    left: -2px;
+    min-height: 105.5vh !important;
+    width:  150px;
     z-index: 100;
-    padding: 48px 10px 0;
+    padding: 48px 2px 0;
     box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-    background-color: green;
+    
     
 }
+
+.logoText {
+    font-size: 25px;
+    text-align: center;
+    padding: 19px 0 0 0;
+
+}
+
+.closemenu {
+    text-align: right;
+    font-size: 25px;
+    padding: 0 0 0 0;
+}
+
+.cornIcon {
+    margin-bottom: 0;
+}
+
+ .cornAndText {
+    margin-bottom: -1rem;
+}
+/*
 #sidebar-wrapper {
     min-height: 100vh !important;
     width: 100vh;
@@ -31,7 +53,7 @@
 } */
 
 
-#sidebar {
+/* #sidebar {
     position: absolute;
     width: 220px;
     top: 0;
@@ -115,7 +137,7 @@
 #sidebar .logo{
     padding: 20px;
 }
-
+ */
 
 
 

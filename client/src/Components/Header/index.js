@@ -1,4 +1,4 @@
-import SignUp from '../SignUp/signup';
+/* import SignUp from '../SignUp/signup';
 import LogIn from '../Login/Login';
 // import { useMutation } from '@apollo/client';
 // import {ADD_USER} from "../../utils/mutations"
@@ -44,3 +44,4 @@ const Header = () => {
 
 export default Header;
 
+ */

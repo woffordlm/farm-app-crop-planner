@@ -16,6 +16,7 @@ import Home from "./pages/Home";
 import Header from "./Components/Header";
 import Sidebar from "./Components/Sidebar";
 import Addplanting from './Components/Addplanting/index';
+import PageTabs from "./Components/Tabs";
 
 
 const httpLink = createHttpLink({
@@ -38,23 +39,29 @@ const client = new ApolloClient({
 });
 
 function App() {
-  // const [modalOpen, setModalOpen] = useState(false);
-  // const close = () => setModalOpen(false);
-  // const open = () => setModalOpen(true);
+  const [modalOpen, setModalOpen] = useState(false);
+  const close = () => setModalOpen(false);
+  const open = () => setModalOpen(true);
   return (
     <ApolloProvider client={client}>
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
-          <Header />
+          {/* <Header /> */}
           <div className="container">
+          
             <Routes>
               <Route exact path="/" component={Home} />
             </Routes>
 
 
           </div>
-          <Sidebar />
+          <PageTabs/>
 
+          <Sidebar>
+              
+          </Sidebar>
+
+          
         
 
         </div>

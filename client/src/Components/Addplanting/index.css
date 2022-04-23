@@ -133,9 +133,10 @@ main {
   
   .save-button {
     padding: 0 1rem;
-    margin: 2rem auto auto 0;
+    margin: 0rem auto auto 12px;
     background: var(--gradient2);
     color: var(--dark);
+    
   }
   
   .close-button {
@@ -168,6 +169,10 @@ main {
     
   ::placeholder {
     font-style: italic;
+  }
+
+  .addPlantingText {
+    margin-bottom: 0rem;
   }
   
   /* .container {
