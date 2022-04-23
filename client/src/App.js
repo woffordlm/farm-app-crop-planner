@@ -52,19 +52,21 @@ function App() {
               <Route exact path="/" component={Home} />
             </Routes>
 
-              {/* <motion.button
+               <motion.button
                 whileHover={{ scale: 1.1}}
                 whileTap={{ scale: 0.9 }}
                 className="save-button"
                 onClick={() => (modalOpen ? close() : open())}
               >
                 Add Planting
-            </motion.button>  */}
+            </motion.button>  
 
           </div>
-          <Sidebar />
+          <Sidebar>
+              
+          </Sidebar>
 
-          {/*  <main>
+            <main>
             <AnimatePresence
             initial={false}
             exitBeforeEnter={true}
@@ -72,7 +74,7 @@ function App() {
             >
               {modalOpen && <Addplanting modalOpen={modalOpen} handleClose={close} />}
             </AnimatePresence>
-          </main> */} 
+          </main>  
 
         </div>
       </Router>

@@ -44,7 +44,14 @@ code {
   box-sizing: border-box;
 }
 
-body {
+.save-button {
+  position: absolute;
+  top: 80px;
+  left: 350px;
+
+}
+
+/* body {
   background: var(--dark);
   font-family: "Montserrat", sans-serif;
   height: 100%;
@@ -58,96 +65,11 @@ main {
   padding: 2rem;
   align-items: center;
   overflow-y: hidden;
-}
+} */
 
-/* Sidebar - John */
-#sidebar {
-  position: absolute;
-  width: 220px;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  min-height: 100vh !important;
-  z-index: 100;
-  padding: 0px 0 0;
-}
+/* Modal - Dani */
 
-#sidebar .pro-sidebar {
-  height: 100vh;
-  color: black;
-  text-align: center;
-}
-
-#sidebar .closemenu {
-  color: #000;
-  position: absolute;
-  right: 0;
-  z-index: 9999;
-  line-height: 20px;
-  border-radius: 50%;
-  font-weight: bold;
-  font-size: 22px;
-  top: 55px;
-  cursor: pointer;
-}
-
-#sidebar .pro-sidebar {
-  width: 100%;
-  min-width: 100%;
-}
-
-#sidebar .pro-sidebar.collapsed {
-  width: 80px;
-  min-width: 80px;
-  text-align: center;
-}
-
-#sidebar .pro-sidebar-inner {
-  background-color: white;
-  box-shadow: 0.5px 0.866px 2px 0px rgba(0, 0, 0, 0.15);
-}
-
-#sidebar .pro-sidebar-inner .pro-sidebar-layout {
-  overflow-y: hidden;
-}
-
-#sidebar .pro-sidebar-inner .pro-sidebar-layout .logotext p {
-  font-size: 20px;
-  padding: 0 20px;
-  color: #000;
-  font-weight: bold;
-}
-
-#sidebar .pro-sidebar-inner .pro-sidebar-layout ul {
-  padding: 0 5px;
-}
-
-#sidebar .pro-sidebar-inner .pro-sidebar-layout ul .pro-inner-item {
-  color: #000;
-  margin: 10px 0px;
-  font-weight: bold;
-}
-
-#sidebar .pro-sidebar-inner .pro-sidebar-layout ul .pro-inner-item .pro-icon-wrapper {
-  background-color: #fbf4cd;
-  color: #000;
-  border-radius: 3px;
-}
-
-#sidebar .pro-sidebar-inner .pro-sidebar-layout ul .pro-inner-item .pro-icon-wrapper .pro-item-content {
-  color: #000;
-}
-
-#sidebar .pro-sidebar-inner .pro-sidebar-layout .active {
-  background-image: linear-gradient(0deg, #fece00, #ffe172 100%)
-}
-
-#sidebar .logo{
-  padding: 20px;
-}
-
-
-h1 {
+/* h1 {
   color: #ff9d00;
   font-size: 175%;
   font-weight: 400;
@@ -283,7 +205,7 @@ button {
   height: 2.5rem;
   margin: 2rem auto 1rem 0;
   background: #101111;
-  /* border: 1px dashed #9a9a9a99; */
+  border: 1px dashed #9a9a9a99; 
   color: #ffaa00;
   border-radius: 4px;
   transition: background ease 400ms;
@@ -382,11 +304,11 @@ li {
   justify-content: center;
 }
 
-.close svg {
+ .close svg {
   margin: 0 auto;
   width: 100%;
   height: 100%;
-}
+} 
 
 .sub-header {
   margin: 1rem auto 1rem 0;
@@ -397,10 +319,10 @@ li {
   button {
     cursor: pointer;
   }
-  /* .modal {
+   .modal {
     width: 750px;
     height: 300px;
-  } */
+  }
   .input,
   input {
     width: calc(25vw);
@@ -409,5 +331,91 @@ li {
     color: #ff9d00;
     font-size: 250%;
   }
+} /*
+
+/* Sidebar - John */
+#sidebar {
+  position: absolute;
+  width: 220px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  min-height: 100vh !important;
+  z-index: 100;
+  padding: 0px 0 0;
+}
+
+#sidebar .pro-sidebar {
+  height: 100vh;
+  color: black;
+  text-align: center;
+}
+
+#sidebar .closemenu {
+  color: #000;
+  position: absolute;
+  right: 0;
+  z-index: 9999;
+  line-height: 20px;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 22px;
+  top: 55px;
+  cursor: pointer;
+}
+
+#sidebar .pro-sidebar {
+  width: 100%;
+  min-width: 100%;
+}
+
+#sidebar .pro-sidebar.collapsed {
+  width: 80px;
+  min-width: 80px;
+  text-align: center;
+}
+
+#sidebar .pro-sidebar-inner {
+  background-color: white;
+  box-shadow: 0.5px 0.866px 2px 0px rgba(0, 0, 0, 0.15);
+}
+
+#sidebar .pro-sidebar-inner .pro-sidebar-layout {
+  overflow-y: hidden;
+}
+
+#sidebar .pro-sidebar-inner .pro-sidebar-layout .logotext p {
+  font-size: 20px;
+  padding: 0 20px;
+  color: #000;
+  font-weight: bold;
+}
+
+#sidebar .pro-sidebar-inner .pro-sidebar-layout ul {
+  padding: 0 5px;
+}
+
+#sidebar .pro-sidebar-inner .pro-sidebar-layout ul .pro-inner-item {
+  color: #000;
+  margin: 10px 0px;
+  font-weight: bold;
+}
+
+#sidebar .pro-sidebar-inner .pro-sidebar-layout ul .pro-inner-item .pro-icon-wrapper {
+  background-color: #fbf4cd;
+  color: #000;
+  border-radius: 3px;
+}
+
+#sidebar .pro-sidebar-inner .pro-sidebar-layout ul .pro-inner-item .pro-icon-wrapper .pro-item-content {
+  color: #000;
+}
+
+#sidebar .pro-sidebar-inner .pro-sidebar-layout .active {
+  background-image: linear-gradient(0deg, #fece00, #ffe172 100%)
+}
+
+#sidebar .logo{
+  padding: 20px;
 }
 
