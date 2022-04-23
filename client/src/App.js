@@ -8,23 +8,13 @@ import {
   ApolloProvider,
   createHttpLink,
 } from "@apollo/client";
-import { setContext } from "@apollo/client/link/context";
-<<<<<<< HEAD
-import Home from "./pages/Home";
-// import Header from "./Components/Header";
-import Sidebar from "./Components/Sidebar";
-import PageTabs from "./Components/Tabs";
-import { QUERY_CROPREFERENCE } from "./utils/queries";
-import { useQuery } from '@apollo/client';
-// import {QUERY_CROPREFERENCE} from '../src/utils/queries'
-=======
+import {setContext} from "@apollo/client/link/context";
 import Header from "./Components/Header";
 import Sidebar from "./Components/Sidebar";
 import PageTabs from "./Components/Tabs";
 import Home from './pages/Home'
 
 
->>>>>>> 4e2fc38695b52731aa941faafee99df47508cb93
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
