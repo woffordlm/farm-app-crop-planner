@@ -54,11 +54,7 @@ function App() {
          {/* <Header /> */}
           <div className="container">
             <Routes>
-<<<<<<< HEAD
-              <Route exact path="/" element={<Home/>} />
-=======
               <Route exact path="/" element={<Home />} />
->>>>>>> 4e2fc38695b52731aa941faafee99df47508cb93
             </Routes>
           </div>
           <PageTabs /> 
