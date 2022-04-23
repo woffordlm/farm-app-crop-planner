@@ -1,5 +1,5 @@
 import React from "react";
-// import { useState } from "react";
+import { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import {
   ApolloClient,
@@ -9,13 +9,13 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
-// import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 
 import Home from "./pages/Home";
 import Header from "./Components/Header";
 import Sidebar from "./Components/Sidebar";
-// import Addplanting from './Components/Addplanting/index';
+import Addplanting from './Components/Addplanting/index';
 
 
 const httpLink = createHttpLink({
@@ -38,32 +38,33 @@ const client = new ApolloClient({
 });
 
 function App() {
-  // const [modalOpen, setModalOpen] = useState(false);
-  // const close = () => setModalOpen(false);
-  // const open = () => setModalOpen(true);
+  const [modalOpen, setModalOpen] = useState(false);
+  const close = () => setModalOpen(false);
+  const open = () => setModalOpen(true);
   return (
     <ApolloProvider client={client}>
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
           <Header />
           <div className="container">
+            
             <Routes>
               <Route exact path="/" component={Home} />
             </Routes>
 
-            {/* <motion.button
+              {/* <motion.button
                 whileHover={{ scale: 1.1}}
                 whileTap={{ scale: 0.9 }}
                 className="save-button"
                 onClick={() => (modalOpen ? close() : open())}
               >
                 Add Planting
-            </motion.button> */}
+            </motion.button>  */}
 
           </div>
           <Sidebar />
 
-          {/* <main>
+          {/*  <main>
             <AnimatePresence
             initial={false}
             exitBeforeEnter={true}
@@ -71,7 +72,7 @@ function App() {
             >
               {modalOpen && <Addplanting modalOpen={modalOpen} handleClose={close} />}
             </AnimatePresence>
-          </main> */}
+          </main> */} 
 
         </div>
       </Router>

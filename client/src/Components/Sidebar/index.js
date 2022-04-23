@@ -13,7 +13,7 @@ import { BiCog } from "react-icons/bi";
 import { GiCorn } from 'react-icons/gi';
 
 import 'react-pro-sidebar/dist/css/styles.css';
-import '../Sidebar/index.css';
+import './index.css';
 import { useState } from 'react';
 
 const Sidebar = () => {
