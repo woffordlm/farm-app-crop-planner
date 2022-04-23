@@ -16,6 +16,7 @@ import Home from "./pages/Home";
 import Header from "./Components/Header";
 import Sidebar from "./Components/Sidebar";
 import Addplanting from './Components/Addplanting/index';
+import PageTabs from "./Components/Tabs";
 
 
 const httpLink = createHttpLink({
@@ -45,19 +46,22 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
-          <Header />
+          {/* <Header /> */}
           <div className="container">
-            
+          
             <Routes>
               <Route exact path="/" component={Home} />
             </Routes>
 
 
           </div>
+          <PageTabs/>
+
           <Sidebar>
               
           </Sidebar>
 
+          
         
 
         </div>

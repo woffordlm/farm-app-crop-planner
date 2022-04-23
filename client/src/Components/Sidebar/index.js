@@ -13,6 +13,7 @@ import { FaList } from "react-icons/fa";
 import { FiHome, FiLogOut, FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
 import { BiCog } from "react-icons/bi";
 import { GiCorn } from 'react-icons/gi';
+import { TiPlus } from 'react-icons/ti'; 
 
 import 'react-pro-sidebar/dist/css/styles.css';
 import './index.css';
@@ -35,7 +36,7 @@ const Sidebar = () => {
             <ProSidebar collapsed={menuCollapse}>
                 <SidebarHeader>
                 <div className='logoText'>
-                    {menuCollapse ? <p><GiCorn/></p> : <p><GiCorn/>  Crop App</p>}
+                    {menuCollapse ? <p className='cornIcon'><GiCorn/></p> : <p className='cornAndText'><GiCorn/>  Crop App</p>}
                 </div>
                 <div className='closemenu' onClick={menuIconClick}>
                     {menuCollapse ? (
@@ -49,12 +50,13 @@ const Sidebar = () => {
                     <Menu iconShape='square'>
 
                         <motion.button
+                            
                             whileHover={{ scale: 1.1}}
                             whileTap={{ scale: 0.9 }}
                             className="save-button"
                             onClick={() => (modalOpen ? close() : open())}
                         >
-                            Add Planting
+                            {menuCollapse ? <TiPlus/> : <p className='addPlantingText'>Add A Planting</p>}
                         </motion.button>
                         
                         <AnimatePresence
@@ -85,3 +87,4 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
+
