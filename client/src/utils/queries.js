@@ -20,8 +20,9 @@ query Query {
   allCrops {
     _id
     name
-    DTM
+    dtm
     harvestwindow
+    sowingDates
   }
 }
 `;
@@ -31,7 +32,7 @@ export const QUERY_PLANTINGS= gql`
     allPlantings(username: $username) {
       _id: ID
       cropType: String
-      DTM: Int
+      dtm: Int
       harvestDate: String
       username: String   
     }

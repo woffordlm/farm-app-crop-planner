@@ -8,13 +8,13 @@ const cropReferenceSchema = new Schema(
     name: {
       type: String,
     },
-    DTM: {
+    dtm: {
       type: Number,
     },
     harvestwindow: {
       type: Number,
       },
-    sowingDate: {
+    sowingDates: {
       type: String,
     }
 
