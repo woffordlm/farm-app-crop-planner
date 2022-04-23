@@ -14,12 +14,19 @@ const typeDefs = gql `
         harvestDate: String
         username: String      
     }
+    type CropReference {
+        _id: ID
+        name: String
+        DTM: Int 
+        harvestwindow: Int
+    }
     type Auth {
         token: ID!
         user: User
         }
     type Query {
         me: User
+        allCrops: [CropReference]
     }
     type Mutation {
         login(email: String!, password: String!): Auth
