@@ -11,6 +11,7 @@ import { setContext } from "@apollo/client/link/context";
 import Home from "./pages/Home";
 import Header from "./Components/Header";
 import Sidebar from "./Components/Sidebar";
+import PageTabs from "./Components/Tabs";
 // import { QUERY_CROPREFERENCE } from "./utils/queries";
 
 const httpLink = createHttpLink({
@@ -46,6 +47,10 @@ function App() {
               <Route exact path="/" component={Home} />
             </Routes>
           </div>
+<<<<<<< HEAD
+=======
+          <PageTabs />
+>>>>>>> 3e952798054ed3b5119706c61006a18d95540a01
           <Sidebar />
         </div>
       </Router>
