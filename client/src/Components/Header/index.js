@@ -5,16 +5,21 @@ import LogIn from '../Login/Login';
 // import { Link } from 'react-router-dom';
 // import Auth from '../../utils/auth';
 import "./index.css"
+import { QUERY_CROPREFERENCE } from '../../utils/queries';
+import { useQuery } from '@apollo/client';
+
 import {
   Navbar,
   Container,
   Offcanvas,
-  Button,
   Nav} from "react-bootstrap"
 
 
 const Header = () => {
-    
+  const {data} = useQuery(QUERY_CROPREFERENCE);
+  console.log('data:', data)
+
+
   return (
     <header className="col container">
      <Navbar bg="light" expand={false}>
