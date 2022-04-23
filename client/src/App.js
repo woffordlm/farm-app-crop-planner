@@ -7,17 +7,12 @@ import {
   ApolloProvider,
   createHttpLink,
 } from "@apollo/client";
-import { setContext } from '@apollo/client/link/context';
-
-import { motion, AnimatePresence } from "framer-motion";
-
-
+import { setContext } from "@apollo/client/link/context";
 import Home from "./pages/Home";
 import Header from "./Components/Header";
 import Sidebar from "./Components/Sidebar";
-import Addplanting from './Components/Addplanting/index';
 import PageTabs from "./Components/Tabs";
-
+// import { QUERY_CROPREFERENCE } from "./utils/queries";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -51,9 +46,8 @@ function App() {
               <Route exact path="/" component={Home} />
             </Routes>
           </div>
-          <PageTabs/>
-          <Sidebar>
-          </Sidebar>
+          <PageTabs />
+          <Sidebar />
         </div>
       </Router>
     </ApolloProvider>
