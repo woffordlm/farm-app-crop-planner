@@ -1,5 +1,5 @@
 import React from "react";
-// import { useState } from "react";
+import { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import {
   ApolloClient,
@@ -15,7 +15,7 @@ import { setContext } from "@apollo/client/link/context";
 import Home from "./pages/Home";
 import Header from "./Components/Header";
 import Sidebar from "./Components/Sidebar";
-// import Addplanting from './Components/Addplanting/index';
+import Addplanting from './Components/Addplanting/index';
 
 
 const httpLink = createHttpLink({
@@ -38,9 +38,9 @@ const client = new ApolloClient({
 });
 
 function App() {
-  // const [modalOpen, setModalOpen] = useState(false);
-  // const close = () => setModalOpen(false);
-  // const open = () => setModalOpen(true);
+  const [modalOpen, setModalOpen] = useState(false);
+  const close = () => setModalOpen(false);
+  const open = () => setModalOpen(true);
   return (
     <ApolloProvider client={client}>
       <Router>
@@ -61,7 +61,7 @@ function App() {
             </motion.button> */}
 
           </div>
-          <Sidebar />
+          {/* <Sidebar /> */}
 
           {/* <main>
             <AnimatePresence

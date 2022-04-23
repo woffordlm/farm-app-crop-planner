@@ -127,7 +127,7 @@ button {
   cursor: default;
   font-family: "Montserrat", sans-serif;
 }
-
+/* 
 .backdrop {
   position: absolute;
   top: 0;
@@ -139,7 +139,7 @@ button {
   align-items: center;
   justify-content: center;
   overflow-y: hidden;
-}
+} */
 
 .modal {
   width: clamp(50%, 700px, 90%);
