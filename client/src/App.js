@@ -9,7 +9,7 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import Home from "./pages/Home";
-import Header from "./Components/Header";
+// import Header from "./Components/Header";
 import Sidebar from "./Components/Sidebar";
 import PageTabs from "./Components/Tabs";
 // import { QUERY_CROPREFERENCE } from "./utils/queries";
