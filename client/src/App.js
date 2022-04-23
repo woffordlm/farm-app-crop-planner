@@ -1,5 +1,5 @@
 import React from "react";
-// import { useState } from "react";
+import { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import {
   ApolloClient,
@@ -9,13 +9,13 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
-// import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 
 import Home from "./pages/Home";
 import Header from "./Components/Header";
 import Sidebar from "./Components/Sidebar";
-// import Addplanting from './Components/Addplanting/index';
+import Addplanting from './Components/Addplanting/index';
 
 
 const httpLink = createHttpLink({

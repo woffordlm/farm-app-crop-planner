@@ -28,7 +28,7 @@ code {
     monospace;
 } */
 
-/* @import-normalize; */
+@import-normalize;
 @import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap);
 
 :root {
@@ -41,7 +41,7 @@ code {
 }
 
 * {
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 
 body {
