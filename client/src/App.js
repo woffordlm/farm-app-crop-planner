@@ -15,7 +15,7 @@ import { setContext } from "@apollo/client/link/context";
 import Home from "./pages/Home";
 import Header from "./Components/Header";
 import Sidebar from "./Components/Sidebar";
-import Addplanting from './Components/Addplanting/index';
+// import Addplanting from './Components/Addplanting/index';
 
 
 const httpLink = createHttpLink({
@@ -38,9 +38,9 @@ const client = new ApolloClient({
 });
 
 function App() {
-  const [modalOpen, setModalOpen] = useState(false);
-  const close = () => setModalOpen(false);
-  const open = () => setModalOpen(true);
+  // const [modalOpen, setModalOpen] = useState(false);
+  // const close = () => setModalOpen(false);
+  // const open = () => setModalOpen(true);
   return (
     <ApolloProvider client={client}>
       <Router>
@@ -51,27 +51,11 @@ function App() {
               <Route exact path="/" component={Home} />
             </Routes>
 
-            {/* <motion.button
-                whileHover={{ scale: 1.1}}
-                whileTap={{ scale: 0.9 }}
-                className="save-button"
-                onClick={() => (modalOpen ? close() : open())}
-              >
-                Add Planting
-            </motion.button> */}
 
           </div>
           <Sidebar />
 
-          {/* <main>
-            <AnimatePresence
-            initial={false}
-            exitBeforeEnter={true}
-            onExitComplete={() => null}
-            >
-              {modalOpen && <Addplanting modalOpen={modalOpen} handleClose={close} />}
-            </AnimatePresence>
-          </main> */}
+        
 
         </div>
       </Router>
