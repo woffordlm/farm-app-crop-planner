@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Planting } = require('../models');
+const { User, Planting,CropReference } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -12,7 +12,12 @@ const resolvers = {
             // .populate('friends');
           return userData;
         }
-    }
+      },
+      allCrops: async ()=> {
+        return CropReference.find();
+      }
+
+
   },
   
     Mutation: {

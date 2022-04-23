@@ -14,6 +14,17 @@ export const QUERY_ME = gql`
     }
   }
 `;
+
+export const QUERY_CROPREFERENCE = gql`
+query Query {
+  allCrops {
+    _id
+    name
+    DTM
+    harvestwindow
+  }
+}
+`
 export const QUERY_PLANTINGS= gql`
   query allPlantings($username: String) {
     allPlantings(username: $username) {

@@ -1,5 +1,5 @@
-import React from "react";
-import { useState } from "react";
+// import React, { useEffect } from "react";
+
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import {
   ApolloClient,
@@ -8,15 +8,10 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
-
-// import { motion, AnimatePresence } from "framer-motion";
-
-
 import Home from "./pages/Home";
 import Header from "./Components/Header";
 import Sidebar from "./Components/Sidebar";
-// import Addplanting from './Components/Addplanting/index';
-
+// import { QUERY_CROPREFERENCE } from "./utils/queries";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -38,9 +33,8 @@ const client = new ApolloClient({
 });
 
 function App() {
-  // const [modalOpen, setModalOpen] = useState(false);
-  // const close = () => setModalOpen(false);
-  // const open = () => setModalOpen(true);
+ 
+
   return (
     <ApolloProvider client={client}>
       <Router>
@@ -50,13 +44,8 @@ function App() {
             <Routes>
               <Route exact path="/" component={Home} />
             </Routes>
-
-
           </div>
           <Sidebar />
-
-        
-
         </div>
       </Router>
     </ApolloProvider>

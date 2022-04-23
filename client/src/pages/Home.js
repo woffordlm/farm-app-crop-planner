@@ -1,13 +1,13 @@
 import Auth from '../utils/auth';
+// import { QUERY_ME } from '../utils/queries';
 import { useQuery } from '@apollo/client';
-import { QUERY_ME } from '../utils/queries';
+import {QUERY_CROPREFERENCE} from '../utils/queries'
+import {Button} from "react-bootstrap"
 function Home() {
 
-  
-  const { data: userData } = useQuery(QUERY_ME);
-  // const myData = data?.allplantings || [];
-  const loggedIn = Auth.loggedIn();;
-  console.log('loggedIn:', loggedIn)
+  const {data} = useQuery(QUERY_CROPREFERENCE);
+  console.log('data:', data)
+  // const { data: userData } = useQuery(QUERY_ME);
 
 
 
