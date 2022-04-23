@@ -6,6 +6,8 @@ import {
     SidebarFooter,
     SidebarContent
 } from 'react-pro-sidebar';
+import { motion, AnimatePresence } from "framer-motion";
+import Addplanting from '../Addplanting/index';
 
 import { FaList } from "react-icons/fa";
 import { FiHome, FiLogOut, FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
@@ -18,6 +20,9 @@ import { useState } from 'react';
 
 const Sidebar = () => {
 
+    const [modalOpen, setModalOpen] = useState(false);
+  const close = () => setModalOpen(false);
+  const open = () => setModalOpen(true);
     const [menuCollapse, setMeunCollapse] = useState(false)
 
     const menuIconClick = () => {
@@ -42,6 +47,24 @@ const Sidebar = () => {
                 </SidebarHeader>
                 <SidebarContent>
                     <Menu iconShape='square'>
+
+                        <motion.button
+                            whileHover={{ scale: 1.1}}
+                            whileTap={{ scale: 0.9 }}
+                            className="save-button"
+                            onClick={() => (modalOpen ? close() : open())}
+                        >
+                            Add Planting
+                        </motion.button>
+                        
+                        <AnimatePresence
+                        initial={false}
+                        exitBeforeEnter={true}
+                        onExitComplete={() => null}
+                        >
+                        {modalOpen && <Addplanting modalOpen={modalOpen} handleClose={close} />}
+                        </AnimatePresence>
+                       
                         <MenuItem active={true} icon={<FiHome />}>
                             Home
                         </MenuItem>
