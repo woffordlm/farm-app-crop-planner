@@ -19,6 +19,7 @@ const typeDefs = gql `
         name: String
         DTM: Int 
         harvestwindow: Int
+        sowingDate: String
     }
     type Auth {
         token: ID!

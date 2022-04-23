@@ -13,7 +13,11 @@ const cropReferenceSchema = new Schema(
     },
     harvestwindow: {
       type: Number,
-      }
+      },
+    sowingDate: {
+      type: String,
+    }
+
   }
 );
 

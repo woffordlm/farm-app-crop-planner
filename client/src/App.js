@@ -1,5 +1,6 @@
 // import React, { useEffect } from "react";
 
+
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import {
   ApolloClient,
@@ -8,6 +9,7 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
+<<<<<<< HEAD
 import Home from "./pages/Home";
 // import Header from "./Components/Header";
 import Sidebar from "./Components/Sidebar";
@@ -15,6 +17,14 @@ import PageTabs from "./Components/Tabs";
 import { QUERY_CROPREFERENCE } from "./utils/queries";
 import { useQuery } from '@apollo/client';
 // import {QUERY_CROPREFERENCE} from '../src/utils/queries'
+=======
+import Header from "./Components/Header";
+import Sidebar from "./Components/Sidebar";
+import PageTabs from "./Components/Tabs";
+import Home from './pages/Home'
+
+
+>>>>>>> 4e2fc38695b52731aa941faafee99df47508cb93
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
@@ -35,19 +45,23 @@ const client = new ApolloClient({
 });
 
 function App() {
- 
+  
 
   return (
     <ApolloProvider client={client}>
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
-          {/* <Header /> */}
+         {/* <Header /> */}
           <div className="container">
             <Routes>
+<<<<<<< HEAD
               <Route exact path="/" element={<Home/>} />
+=======
+              <Route exact path="/" element={<Home />} />
+>>>>>>> 4e2fc38695b52731aa941faafee99df47508cb93
             </Routes>
           </div>
-          <PageTabs />
+          <PageTabs /> 
           <Sidebar />
         </div>
       </Router>
