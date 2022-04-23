@@ -17,7 +17,7 @@ const typeDefs = gql `
     type CropReference {
         _id: ID
         name: String
-        DTM: Int 
+        dtm: Int 
         harvestwindow: Int
         sowingDate: String
     }
