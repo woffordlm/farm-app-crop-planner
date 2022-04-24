@@ -28,7 +28,11 @@ const dropIn = {
     },
 };
 
-const Addplanting = ({ handleClose, text }) => {
+const Addplanting = ({ handleClose,modalOpen,data, text }) => {
+console.log('data:', data)
+
+
+
 
     const [value, onChange] = useState(new Date());
 
@@ -47,6 +51,7 @@ const Addplanting = ({ handleClose, text }) => {
                 <h2>{"What vegetable do you want to plant ? "}
                    
                     <select className="close-button">
+                        {console.log()}
                         <option defaultValue={"Select Plant"}>Select Plant</option>
                         <option value="grapefruit">Grapefruit</option>
                         <option value="lime">Lime</option>
