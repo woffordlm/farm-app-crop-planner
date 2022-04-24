@@ -46,7 +46,7 @@ const plantSeeds = await CropReference.insertMany(
          "harvestwindow": 14
         },
         {
-         "name": "Brussel Sprouts",
+         "name": "Brussels Sprouts",
          "DTM": 120,
          "harvestwindow": 21
         },
@@ -101,7 +101,7 @@ const plantSeeds = await CropReference.insertMany(
          "harvestwindow": 45
         },
         {
-         "name": "Cucumber - Libanese (Greenhouse)",
+         "name": "Cucumber - Lebanese (Greenhouse)",
          "DTM": 55,
          "harvestwindow": 45
         },
@@ -161,12 +161,12 @@ const plantSeeds = await CropReference.insertMany(
          "harvestwindow": 14
         },
         {
-         "name": "Melons - Cantalope",
+         "name": "Melons - Cantaloupe",
          "DTM": 76,
          "harvestwindow": 21
         },
         {
-         "name": "Melons - Watermelom",
+         "name": "Melons - Watermelon",
          "DTM": 76,
          "harvestwindow": 21
         },
