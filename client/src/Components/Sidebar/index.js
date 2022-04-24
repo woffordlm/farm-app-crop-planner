@@ -19,7 +19,10 @@ import 'react-pro-sidebar/dist/css/styles.css';
 import './index.css';
 import { useState } from 'react';
 
-const Sidebar = (props) => {
+const Sidebar = ({data}) => {
+
+console.log('data:', data.allCrops[2].name)
+
 
     const [modalOpen, setModalOpen] = useState(false);
   const close = () => setModalOpen(false);
@@ -61,7 +64,7 @@ const Sidebar = (props) => {
                         exitBeforeEnter={true}
                         onExitComplete={() => null}
                         >
-                        {modalOpen && <Addplanting plantData= {props.plantData} modalOpen={modalOpen} handleClose={close} />}
+                        {modalOpen && <Addplanting data = {data}  modalOpen={modalOpen} handleClose={close} />}
                         </AnimatePresence>
                         <MenuItem active={true} icon={<FiHome />}>
                             Home

@@ -25,8 +25,11 @@ const dropIn = {
     },
 };
 
-const Addplanting = ({ handleClose,plantData, text }) => {
-console.log('plantData:', plantData)
+const Addplanting = ({ handleClose,modalOpen,data, text }) => {
+console.log('data:', data)
+
+
+
 
     return (
         <Backdrop onClick={handleClose}>
