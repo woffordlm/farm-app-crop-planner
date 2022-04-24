@@ -19,7 +19,10 @@ import 'react-pro-sidebar/dist/css/styles.css';
 import './index.css';
 import { useState } from 'react';
 
-const Sidebar = () => {
+const Sidebar = ({data}) => {
+
+console.log('data:', data.allCrops[2].name)
+
 
     const [modalOpen, setModalOpen] = useState(false);
   const close = () => setModalOpen(false);
@@ -48,38 +51,33 @@ const Sidebar = () => {
                 </SidebarHeader>
                 <SidebarContent>
                     <Menu iconShape='square'>
-
-                        <motion.button
-                            
+                        <motion.button                       
                             whileHover={{ scale: 1.1}}
                             whileTap={{ scale: 0.9 }}
                             className="save-button"
                             onClick={() => (modalOpen ? close() : open())}
                         >
                             {menuCollapse ? <TiPlus/> : <p className='addPlantingText'>Add A Planting</p>}
-                        </motion.button>
-                        
+                        </motion.button>              
                         <AnimatePresence
                         initial={false}
                         exitBeforeEnter={true}
                         onExitComplete={() => null}
                         >
-                        {modalOpen && <Addplanting modalOpen={modalOpen} handleClose={close} />}
+                        {modalOpen && <Addplanting data = {data}  modalOpen={modalOpen} handleClose={close} />}
                         </AnimatePresence>
-                       
                         <MenuItem active={true} icon={<FiHome />}>
                             Home
                         </MenuItem>
                         <MenuItem active={true} icon={<FaList />}>Crop Guide</MenuItem>
                         <MenuItem active={true} icon={<BiCog />}>Settings</MenuItem>
-                    </Menu>
+                    </Menu> 
                 </SidebarContent>
                 <SidebarFooter>
                     <Menu iconShape='square'>
                         <MenuItem icon={<FiLogOut />}>Logout</MenuItem>
                     </Menu>
                 </SidebarFooter>
-
             </ProSidebar>
         </div>
         </>

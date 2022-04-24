@@ -10,9 +10,16 @@ const typeDefs = gql `
     type Planting {
         _id: ID
         cropType: String
-        DTM: Int
+        dtm: Int
         harvestDate: String
         username: String      
+    }
+    type CropReference {
+        _id: ID
+        name: String
+        dtm: Int 
+        harvestwindow: Int
+        sowingDates: String
     }
     type Auth {
         token: ID!
@@ -20,11 +27,12 @@ const typeDefs = gql `
         }
     type Query {
         me: User
+        allCrops: [CropReference]
     }
     type Mutation {
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
-        addPlanting(cropType: String!,username: String!, DTM: Int!, harvestDate: String!): Planting
+        addPlanting(cropType: String!,username: String!, dtm: Int!, harvestDate: String!): Planting
     }`
 module.exports = typeDefs;
 

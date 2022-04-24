@@ -1,5 +1,6 @@
-import React from "react";
-import { useState } from "react";
+// import React, { useEffect } from "react";
+
+
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import {
   ApolloClient,
@@ -7,16 +8,9 @@ import {
   ApolloProvider,
   createHttpLink,
 } from "@apollo/client";
-import { setContext } from "@apollo/client/link/context";
-
-import { motion, AnimatePresence } from "framer-motion";
-
-
-import Home from "./pages/Home";
+import {setContext} from "@apollo/client/link/context";
 import Header from "./Components/Header";
-import Sidebar from "./Components/Sidebar";
-import Addplanting from './Components/Addplanting/index';
-import PageTabs from "./Components/Tabs";
+import Home from './pages/Home'
 
 
 const httpLink = createHttpLink({
@@ -39,31 +33,18 @@ const client = new ApolloClient({
 });
 
 function App() {
-  const [modalOpen, setModalOpen] = useState(false);
-  const close = () => setModalOpen(false);
-  const open = () => setModalOpen(true);
+  
+
   return (
     <ApolloProvider client={client}>
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
-          {/* <Header /> */}
+         {/* <Header /> */}
           <div className="container">
-          
             <Routes>
-              <Route exact path="/" component={Home} />
+              <Route exact path="/" element={<Home />} />
             </Routes>
-
-
           </div>
-          <PageTabs/>
-
-          <Sidebar>
-              
-          </Sidebar>
-
-          
-        
-
         </div>
       </Router>
     </ApolloProvider>

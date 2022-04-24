@@ -1,26 +1,20 @@
-/* import SignUp from '../SignUp/signup';
+import SignUp from '../SignUp/signup';
 import LogIn from '../Login/Login';
-// import { useMutation } from '@apollo/client';
-// import {ADD_USER} from "../../utils/mutations"
-// import { Link } from 'react-router-dom';
-// import Auth from '../../utils/auth';
-import "./index.css"
+import "./index.css";
+
 import {
   Navbar,
   Container,
   Offcanvas,
-  Button,
   Nav} from "react-bootstrap"
 
-
 const Header = () => {
-    
   return (
     <header className="col container">
-     <Navbar bg="light" expand={false}>
+     <Navbar expand={false}>
     <Container fluid>
-    <Navbar.Brand href="#">Crop Planner</Navbar.Brand>
-    <Navbar.Toggle aria-controls="offcanvasNavbar" />
+    {/* <Navbar.Brand href="#">Crop Planner</Navbar.Brand> */}
+    <Navbar.Toggle className= "position-absolute top-0 end-0" aria-controls="offcanvasNavbar" />
     <Navbar.Offcanvas
       id="offcanvasNavbar"
       aria-labelledby="offcanvasNavbarLabel"
@@ -44,4 +38,3 @@ const Header = () => {
 
 export default Header;
 
- */

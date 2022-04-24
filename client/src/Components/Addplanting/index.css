@@ -20,6 +20,8 @@ main {
     font-size: 150%;
     letter-spacing: 0;
     font-family: "Montserrat", sans-serif;
+    color: black;
+    margin-top: 5%;
   }
   
   h3 {
@@ -90,8 +92,8 @@ main {
   } 
   
   .modal {
-    width: clamp(50%, 700px, 90%);
-    height: min(50%, 500px);
+    width: clamp(60%, 50rem, 95%);
+    height: min(70%, 80rem);
     margin: auto;
     padding: 0 2rem;
     border-radius: 12px;
@@ -144,12 +146,17 @@ main {
       height: 2.5rem;
       margin: 2rem auto 1rem 0;
       background: #101111;
-      border: 1px dashed #9a9a9a99;
+      border: 1px solid #9a9a9a99;
       color: #ffaa00;
       border-radius: 4px;
       transition:background ease 400ms;
       box-shadow: 1px 1px 15px #03030399;
     }
+
+  .calendar-select-planting {
+    color: black;
+    border: 2px solid black;
+  }
   
     .input,
     input {
@@ -161,7 +168,7 @@ main {
       background: var(--dark);
       border: 2px solid #ff9d00;
       border-radius: 6px;
-      color: #ff9d00;
+      color: black;
       font-size: 1.25rem;
       font-weight: 400;
       font-family: "Montserrat", sans-serif;
