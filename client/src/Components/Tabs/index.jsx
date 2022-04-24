@@ -26,14 +26,15 @@ const PageTabs = () => {
     const [key, setKey] = useState('schedule');
 
     const events = [
-        {
-            title: 'event 1',
-            date: '2022-04-25'
-        },
-        {
-            title: 'event 2',
-            date: '2022-04-26'
-        },
+         {
+                _id: 1,
+                title: 'Arugula',
+                dtm: 24,
+                date: '2022-05-01',
+                username: 'mcnairjm',
+                plantingDates: '2022-05-01'
+            }
+        
         
     ]
     
