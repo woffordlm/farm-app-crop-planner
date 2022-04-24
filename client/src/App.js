@@ -10,8 +10,7 @@ import {
 } from "@apollo/client";
 import {setContext} from "@apollo/client/link/context";
 import Header from "./Components/Header";
-import Sidebar from "./Components/Sidebar";
-import PageTabs from "./Components/Tabs";
+
 import Home from './pages/Home'
 
 
@@ -47,8 +46,6 @@ function App() {
               <Route exact path="/" element={<Home />} />
             </Routes>
           </div>
-          <PageTabs /> 
-          <Sidebar />
         </div>
       </Router>
     </ApolloProvider>
