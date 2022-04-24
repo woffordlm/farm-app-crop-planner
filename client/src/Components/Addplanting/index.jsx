@@ -4,6 +4,9 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import Backdrop from "../Backdrop";
 import "./index.css"
 
+import React, { useState } from 'react';
+import DatePicker from 'react-date-picker';
+
 const dropIn = {
     hidden: {
         y: "-100vh",
@@ -27,6 +30,8 @@ const dropIn = {
 
 const Addplanting = ({ handleClose, text }) => {
 
+    const [value, onChange] = useState(new Date());
+
     return (
         <Backdrop onClick={handleClose}>
             <motion.div
@@ -39,8 +44,8 @@ const Addplanting = ({ handleClose, text }) => {
             > 
                 <form>
                     <label>
-                <h2>{"What vegetable do you want to plant ?"}</h2>
-                    {/* Pick your favorite flavor: */}
+                <h2>{"What vegetable do you want to plant ? "}
+                   
                     <select className="close-button">
                         <option defaultValue={"Select Plant"}>Select Plant</option>
                         <option value="grapefruit">Grapefruit</option>
@@ -48,13 +53,17 @@ const Addplanting = ({ handleClose, text }) => {
                         <option value="coconut">Coconut</option>
                         <option value="mango">Mango</option>
                     </select>
+                </h2>
                     </label>
-                <h2>{"When do you want to harvest it ?"}</h2>
-                    <input type="submit" value="Submit" />
+                <h2>{"When do you want to harvest it ? "}
+                    <DatePicker onChange={onChange} value={value} className="calendar-select-planting"/>
+                </h2>
+                
+                    <input type="submit" value="Submit" className="close-button" />
                 </form>
                 
                 <br></br>
-                <button className="plant-button close-button " onClick={handleClose}>Close</button>
+                <button className="plant-button close-button" onClick={handleClose}>Close</button>
             </motion.div>
         </Backdrop>
     );
