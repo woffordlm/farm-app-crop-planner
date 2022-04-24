@@ -8,7 +8,7 @@ const plantingSchema = new Schema(
       type: String,
       required: 'You need to pick a vegetable!',
     },
-    DTM: {
+    dtm: {
       type: Number,
       required: true
     },
