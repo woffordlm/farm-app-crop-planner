@@ -24,9 +24,23 @@ function renderEventContent(eventinfo) {
 const PageTabs = () => {
     
     const [key, setKey] = useState('schedule');
+
+    const events = [
+         {
+                _id: 1,
+                title: 'Arugula',
+                dtm: 24,
+                date: '2022-05-01',
+                username: 'mcnairjm',
+                plantingDates: '2022-05-01'
+            }
+        
+        
+    ]
     
     return (
-        
+        <>
+        <h1 className='head'>CROP CALENDAR</h1>
         <Tabs
             id='controlled-tab'
             activeKey={key}
@@ -39,15 +53,14 @@ const PageTabs = () => {
                     defaultView='dayGridMonth' 
                     plugins={[ dayGridPlugin ]} 
                     eventContent={renderEventContent}
-                    events={[
-                        {title: 'event 1', date: '2022-04-25'}
-                    ]}
+                    events={events}
                 />
             </Tab>
             <Tab eventKey='plantDates' title='Plant Dates'>
                 Dates
             </Tab>
         </Tabs>
+    </>
     )
 }
 
