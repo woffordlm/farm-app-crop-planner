@@ -1,8 +1,12 @@
 .Tabs {
     margin-left: 75px;
     
+    
 }
-
+.calendar {
+    margin-top: 40px;
+    background-color: blue;
+}
 .fade {
     opacity: 1;
 }

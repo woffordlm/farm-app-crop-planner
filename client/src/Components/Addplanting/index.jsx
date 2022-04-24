@@ -25,7 +25,8 @@ const dropIn = {
     },
 };
 
-const Addplanting = ({ handleClose, text }) => {
+const Addplanting = ({ handleClose,plantData, text }) => {
+console.log('plantData:', plantData)
 
     return (
         <Backdrop onClick={handleClose}>
@@ -42,6 +43,7 @@ const Addplanting = ({ handleClose, text }) => {
                 <h2>{"What vegetable do you want to plant ?"}</h2>
                     {/* Pick your favorite flavor: */}
                     <select className="close-button">
+                        {console.log()}
                         <option defaultValue={"Select Plant"}>Select Plant</option>
                         <option value="grapefruit">Grapefruit</option>
                         <option value="lime">Lime</option>

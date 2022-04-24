@@ -5,10 +5,11 @@ import {QUERY_CROPREFERENCE} from '../utils/queries'
 import {Button} from "react-bootstrap"
 import Sidebar from '../Components/Sidebar';
 import PageTabs from '../Components/Tabs';
+import Header from '../Components/Header';
 function Home() {
 
-  const {data, error} = useQuery(QUERY_CROPREFERENCE);
-  console.log('data:', data);
+  const {plantData} = useQuery(QUERY_CROPREFERENCE);
+  console.log('data:', plantData);
  
   // const { data: userData } = useQuery(QUERY_ME);
 
@@ -18,8 +19,9 @@ function Home() {
         <div className="App">
           <header className="App-header">
             <div className= "row" >
+            <Header/>
             <PageTabs /> 
-            <Sidebar />
+            <Sidebar data= {plantData} />
             </div>     
           </header>
         </div>
