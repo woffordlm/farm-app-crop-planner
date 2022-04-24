@@ -10,10 +10,6 @@ import {
 } from "@apollo/client";
 import {setContext} from "@apollo/client/link/context";
 import Header from "./Components/Header";
-<<<<<<< HEAD
-
-=======
->>>>>>> 6ff13eadda31ccffb05dc7763fa58e2966cbb88e
 import Home from './pages/Home'
 
 
