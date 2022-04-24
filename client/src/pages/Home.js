@@ -18,8 +18,14 @@ function Home() {
         <div className="App">
           <header className="App-header">
             <div className= "row" >
+<<<<<<< HEAD
             <PageTabs /> 
             <Sidebar />
+=======
+              <PageTabs/>
+              <Sidebar/>
+              
+>>>>>>> 6ff13eadda31ccffb05dc7763fa58e2966cbb88e
             </div>     
           </header>
         </div>
