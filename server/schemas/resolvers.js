@@ -5,17 +5,26 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
     Query: {
       me: async (parent, args, context) => {
+        console.log('context:', context.user)
+        
         if (context.user) {
           const userData = await User.findOne({ _id: context.user._id })
             .select('-__v -password')
-            // .populate('thoughts')
+            .populate('allPlantings')
             // .populate('friends');
           return userData;
         }
+
+      throw new AuthenticationError('Not logged in');
       },
       allCrops: async ()=> {
         return CropReference.find();
+      },
+      allPlantings: async (parent, { username }) => {
+        const params = username ? { username } : {};
+        return Planting.find(params).sort({ createdAt: -1 });
       }
+      
 
 
   },
@@ -43,33 +52,18 @@ const resolvers = {
         return { token, user };
       },
       addPlanting: async (parent, args) => {
-          const individualPlanting = await Planting.create({ ...args,});
-          console.log('individualPlanting:', individualPlanting)
+          const individualPlanting = await Planting.create({ ...args, username: context.user.username });
+          await User.findByIdAndUpdate(
+            { _id: context.user._id },
+            { $push: { allPlantings: individualPlanting._id } },
+            { new: true }
+          );
           return individualPlanting
       },
-      // allPlantings: async (parent, { username }) => {
-      //   const params = username ? { username } : {};
-      //   return Planting.find(params).sort({ createdAt: -1 });
-      // }
-      
+
+     
     }
   };
   module.exports = resolvers;
   
 
-
-  // addPlanting: async (parent, args, context) => {
-  //   if (context.user) {
-  //     const singlePlanting = await Thought.create({ ...args, username: context.user.username });
-
-  //     await User.findByIdAndUpdate(
-  //       { _id: context.user._id },
-  //       { $push: { allPlantings: singlePlanting._id } },
-  //       { new: true }
-  //     );
-
-  //     return thought;
-  //   }
-
-  //   throw new AuthenticationError('You need to be logged in!');
-  // }

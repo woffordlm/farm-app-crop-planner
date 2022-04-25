@@ -28,11 +28,13 @@ const typeDefs = gql `
     type Query {
         me: User
         allCrops: [CropReference]
+        allPlantings(username: String): [Planting]
     }
     type Mutation {
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
         addPlanting(cropType: String!,username: String!, dtm: Int!, harvestDate: String!): Planting
+        
     }`
 module.exports = typeDefs;
 

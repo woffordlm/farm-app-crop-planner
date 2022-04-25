@@ -27,9 +27,9 @@ const plantingSchema = new Schema(
     }
   }
 );
-// plantingSchema.virtual('plantingDate').get(function() {
-//   return this.harvestDate - dtm ;
-// });
+plantingSchema.virtual('plantingDate').get(function() {
+  return this.harvestDate - dtm ;
+});
 
 
 const Planting = model('Planting', plantingSchema);

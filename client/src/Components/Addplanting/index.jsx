@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useQuery } from '@apollo/client';
 import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Backdrop from "../Backdrop";
@@ -32,15 +33,13 @@ const Addplanting = ({ handleClose,modalOpen,data, text }) => {
 //  console.log('data:', data)
  const [value, onChange] = useState(new Date());
 
- const [formState, setFormState] = useState({ cropType: '', dtm: '', username: 'kana', harvestDate: '2022-06-05' });
+ const [formState, setFormState] = useState({ cropType: '', dtm: '30', username: 'kana' });
 
  console.log('formState:', formState)
  const handleDropCropChange = (event) => {
-     let chosenName = event.target.value
+    let chosenName = event.target.value
     setFormState({...formState, cropType:chosenName })
-    console.log('formState:', formState)
-
-
+  
 // for (let i = 0; i < data.allCrops.length; i++) {
 //       if (data.allCrops[i].name === chosenName) {
 //         var savedDTM = data.allCrops[i].dtm;
@@ -49,12 +48,27 @@ const Addplanting = ({ handleClose,modalOpen,data, text }) => {
 //         return;
 //       }
 //     }
-     console.log('formState:', formState)
 }
 
+console.log('value:', value)
+console.log('formState:', formState)
 
 
+// submit form
+const handleFormSubmit = async (event) => {
+    event.preventDefault();
 
+    try {
+      await Addplanting({
+        variables: { plantingInfo },
+      });
+
+      // clear form value
+      setFormState({ cropType: '', dtm: '30', username: 'kana', harvestDate: '' });
+    } catch (e) {
+      console.error(e);
+    }
+  };
 
 
 
