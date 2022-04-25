@@ -3,12 +3,13 @@
 }
 
 .Tabs {
-    margin-left: 75px;
+    margin-left: 0px;
     
     
 }
 .calendar {
     margin-top: 40px;
+
     background-color: blue;
 }
 .fade {
@@ -16,7 +17,7 @@
 }
 
 .fc {
-    margin-left: 80px;
+    margin-left: -15px;
     padding: 0 18px 0 20px;
 }
 
