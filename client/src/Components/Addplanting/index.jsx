@@ -29,12 +29,34 @@ const dropIn = {
 };
 
 const Addplanting = ({ handleClose,modalOpen,data, text }) => {
-console.log('data.allCrops:', data.allCrops)
+//  console.log('data:', data)
+ const [value, onChange] = useState(new Date());
+
+ const [formState, setFormState] = useState({ cropType: '', dtm: '', username: 'kana', harvestDate: '2022-06-05' });
+
+ console.log('formState:', formState)
+ const handleDropCropChange = (event) => {
+     let chosenName = event.target.value
+    setFormState({...formState, cropType:chosenName })
+    console.log('formState:', formState)
+
+
+// for (let i = 0; i < data.allCrops.length; i++) {
+//       if (data.allCrops[i].name === chosenName) {
+//         var savedDTM = data.allCrops[i].dtm;
+//         console.log("savedDTM:", savedDTM);
+//         setFormState({ ...formState, dtm: savedDTM });
+//         return;
+//       }
+//     }
+     console.log('formState:', formState)
+}
 
 
 
 
-    const [value, onChange] = useState(new Date());
+
+
 
     return (
         <Backdrop onClick={handleClose}>
@@ -50,16 +72,19 @@ console.log('data.allCrops:', data.allCrops)
                     <label>
                 <h2>{"What vegetable do you want to plant ? "}
                    
-                    <select className="close-button">
+                    <select name = "cropType" className="close-button"onChange = {handleDropCropChange}>
                     <option defaultValue={"Select Plant"}>Select Plant</option>
                         {data.allCrops && data.allCrops.map(data => (
                             <option value={data.name} key={data._id}>{data.name}</option>
                         ))}      
                     </select>
+                
+
+               
                 </h2>
                     </label>
                 <h2>{"When do you want to harvest it ? "}
-                    <DatePicker onChange={onChange} value={value} className="calendar-select-planting"/>
+                    <DatePicker name= "datePicker" onChange={onChange} value={value} className="calendar-select-planting"/>
                 </h2>
                 
                     <input type="submit" value="Submit" className="close-button" />
