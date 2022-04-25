@@ -10,6 +10,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 
 import './index.css';
 
+
 function renderEventContent(eventinfo) {
     return (
         <>
@@ -25,18 +26,45 @@ const PageTabs = () => {
     
     const [key, setKey] = useState('schedule');
 
-    const events = [
+    let events = [
          {
                 _id: 1,
                 title: 'Arugula',
                 dtm: 24,
-                date: '2022-05-01',
+                harvestDate: '2022-05-01',
                 username: 'mcnairjm',
                 plantingDates: '2022-05-01'
+            },
+
+            {
+                _id: 2,
+                title: 'Basil',
+                dtm: 54,
+                harvestDate: '2022-06-23',
+                username: 'mcnairjm',
+                platingDates: '2022-05-01'
             }
-        
-        
-    ]
+        ]
+
+    const newEvents = events.map(({
+        harvestDate: date,
+        ...rest
+    }) => ({
+        date,
+        ...rest
+    }));
+
+    console.log(newEvents);
+
+    /* events['date'] = events['harvestDate'];
+
+    delete events['harvestDate'];
+
+    console.log(events);
+
+    const newEvents = events;
+
+    console.log(newEvents); */
     
     return (
         <>
@@ -53,7 +81,7 @@ const PageTabs = () => {
                     defaultView='dayGridMonth' 
                     plugins={[ dayGridPlugin ]} 
                     eventContent={renderEventContent}
-                    events={events}
+                    events={newEvents}
                 />
             </Tab>
             <Tab eventKey='plantDates' title='Plant Dates'>
