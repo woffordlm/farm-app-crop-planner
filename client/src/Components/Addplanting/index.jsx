@@ -29,37 +29,23 @@ const dropIn = {
 };
 
 const Addplanting = ({ handleClose,modalOpen,data, text }) => {
-    console.log(' context.username:',  context.username)
-    // data coming in that we are referencing to 
-    console.log('data:', data)
-    // this saves the value of datepicker
-    const [value, onChange] = useState(new Date());
-    // this sets up our state form with default empty values
-    const [formState, setFormState] = useState({ cropType: '', dtm: '', harvestDate: "" });
+  
+    const [formState, setFormState] = useState({ cropType: '', dtm: '', harvestDate: new Date() });
+
+    const handleDropCropChange = (event) => {
+        let chosenName = event.target.value;
+        const foundDtm = data.allCrops.find((crop) => crop.name === chosenName);
+    
+        setFormState({ ...formState, cropType: chosenName, dtm: foundDtm });
+      };
+    
+    console.log("FORM STATE ", formState);
 
     
-    const handleDropCropChange = (event) => {
-        // this saves the chosen vegetable to state
-        let chosenName = event.target.value
-        setFormState({...formState, cropType:chosenName })
-        
-        // this loops through the data that is provided to component
-        // this loops matches the vegetable name chosen to an object with the same name
-        // then it pulls the associated dtm and saves the dtm in state
-        // for (let i = 0; i < data.allCrops.length; i++) {
-        //     if (data.allCrops[i].name === chosenName) {
-        //     var savedDTM = data.allCrops[i].dtm;
-        //     console.log("savedDTM:", savedDTM);
-        //     setFormState({ ...formState, dtm: savedDTM });
-        //     return;
-        //     }
-        // }
-    }
-        console.log('value:', value)
-        console.log('formState:', formState)
-    // setFormState({...formState, harvestDate:value })
-
-
+    const onDateChange =(date)=> {
+        console.log("dateChange1!!!!!!!!!",date)
+        setFormState({...formState, harvestDate: date})
+      }
     const [addPlantingMutation, { error }] = useMutation(ADD_PLANTING);
     const handleFormSubmit = async (event) => {
         event.preventDefault();
@@ -86,13 +72,13 @@ const Addplanting = ({ handleClose,modalOpen,data, text }) => {
             animate="visible"
             exit="exit"
             > 
-                <form>
+                <form onSubmit={handleFormSubmit}>
                     <label>
                 <h2>{"What vegetable do you want to plant ? "}
                    
                     <select name = "cropType" className="close-button"onChange = {handleDropCropChange}>
                     <option defaultValue={"Select Plant"}>Select Plant</option>
-                        {data.allCrops && data.allCrops.map(data => (
+                        {data?.allCrops?.map(data => (
                             <option value={data.name} key={data._id}>{data.name}</option>
                         ))}      
                     </select>
@@ -102,10 +88,13 @@ const Addplanting = ({ handleClose,modalOpen,data, text }) => {
                 </h2>
                     </label>
                 <h2>{"When do you want to harvest it ? "}
-                    <DatePicker name= "datePicker" onChange={onChange} value={value} className="calendar-select-planting"/>
+                    <DatePicker name= "datePicker" onChange={onDateChange} value={formState.harvestDate} className="calendar-select-planting"/>
                 </h2>
                 
-                    <input type="submit" value="Submit" className="close-button" />
+                    {/* <input  type="submit" value="Submit" className="close-button" /> */}
+                    <button className="close-button" type="submit" value= "Submit">
+          Submit
+        </button>
                 </form>
                 
                 <br></br>

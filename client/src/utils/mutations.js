@@ -32,21 +32,13 @@ mutation Mutation($username: String!, $email: String!, $password: String!) {
 }
 `
 export const ADD_PLANTING = gql`
-  mutation addUser($username: String!, $email: String!, $password: String!) {
-    addUser(username: $username, email: $email, password: $password) {
-      token
-      user {
-        _id
-        username
-        email
-        allPlantings {
-          _id
-          cropType
-          dtm
-          harvestDate
-          username
-        }
-      }
-    }
+mutation Mutation($cropType: String!, $username: String!, $dtm: Int!, $harvestDate: String!) {
+  addPlanting(cropType: $cropType, username: $username, dtm: $dtm, harvestDate: $harvestDate) {
+    _id
+    cropType
+    dtm
+    harvestDate
+    username
   }
+}
 `
