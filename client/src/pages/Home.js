@@ -7,6 +7,7 @@ import {Button} from "react-bootstrap"
 import Sidebar from '../Components/Sidebar';
 import PageTabs from '../Components/Tabs';
 import Header from '../Components/Header';
+import Practice from '../Components/practice';
 function Home() {
 
   const {data} = useQuery(QUERY_CROPREFERENCE);
@@ -20,9 +21,10 @@ function Home() {
         <div className="App">
           <header className="App-header">
             <div className= "row" >
+            
             {/* <Header/> */}
             <PageTabs /> 
-            <Sidebar data = {data}/>
+            <Sidebar data = {data}/> 
             </div>     
           </header>
         </div>
