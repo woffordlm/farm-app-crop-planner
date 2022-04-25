@@ -32,7 +32,7 @@ mutation Mutation($username: String!, $email: String!, $password: String!) {
 }
 `
 export const ADD_PLANTING = gql`
-mutation Mutation($cropType: String!, $username: String!, $dtm: Int!, $harvestDate: String!) {
+mutation addPlanting($cropType: String!, $username: String!, $dtm: Int!, $harvestDate: String!) {
   addPlanting(cropType: $cropType, username: $username, dtm: $dtm, harvestDate: $harvestDate) {
     _id
     cropType
