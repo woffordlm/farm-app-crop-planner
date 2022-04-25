@@ -5,7 +5,7 @@ import Backdrop from "../Backdrop";
 import "./index.css"
 import { ADD_PLANTING } from "../../utils/mutations";
 import DatePicker from 'react-date-picker';
-import context from "react-bootstrap/esm/AccordionContext";
+import auth from '../../utils/auth';
 
 const dropIn = {
     hidden: {
@@ -29,14 +29,14 @@ const dropIn = {
 };
 
 const Addplanting = ({ handleClose,modalOpen,data, text }) => {
-  
-    const [formState, setFormState] = useState({ cropType: '', dtm: '', harvestDate: new Date() });
+    const { data: { username }} = auth.getProfile()
+    const [formState, setFormState] = useState({ cropType: '', dtm: 0, harvestDate: new Date() });
 
     const handleDropCropChange = (event) => {
         let chosenName = event.target.value;
         const foundDtm = data.allCrops.find((crop) => crop.name === chosenName);
     
-        setFormState({ ...formState, cropType: chosenName, dtm: foundDtm });
+        setFormState({ ...formState, cropType: chosenName, dtm: foundDtm.dtm });
       };
     
     console.log("FORM STATE ", formState);
@@ -47,11 +47,13 @@ const Addplanting = ({ handleClose,modalOpen,data, text }) => {
         setFormState({...formState, harvestDate: date})
       }
     const [addPlantingMutation, { error }] = useMutation(ADD_PLANTING);
+
     const handleFormSubmit = async (event) => {
         event.preventDefault();
         try {
+        // $cropType: String!, $username: String!, $dtm: Int!, $harvestDate: String!
         await addPlantingMutation({
-            variables: { formState },
+            variables: { cropType: formState.cropType, username, dtm: formState.dtm, harvestDate: formState.harvestDate.toString()  },
         });
         // clear form value
         setFormState({ cropType: '', dtm: '', harvestDate: '' });

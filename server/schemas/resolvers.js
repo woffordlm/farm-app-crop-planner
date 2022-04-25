@@ -50,7 +50,7 @@ const resolvers = {
       console.log("you made IIIIIIIITTTT");
       return { token, user };
     },
-    addPlanting: async (parent, args) => {
+    addPlanting: async (parent, args, context) => {
       const individualPlanting = await Planting.create({
         ...args,
         username: context.user.username,
