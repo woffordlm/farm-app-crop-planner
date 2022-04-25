@@ -13,7 +13,7 @@ function Practice({data}) {
     const handleDropCropChange = (event) => {
     // console.log('event:', event.target.value)
     let chosenName = event.target.value;
-    console.log('chosenName:', chosenName)
+    // console.log('chosenName:', chosenName)
     setFormState({...formState, cropType: chosenName })
     console.log('formStatecrop:', formState.cropType)
     
