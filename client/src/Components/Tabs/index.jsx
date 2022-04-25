@@ -10,6 +10,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 
 import './index.css';
 
+
 function renderEventContent(eventinfo) {
     return (
         <>
@@ -25,11 +26,12 @@ const PageTabs = () => {
     
     const [key, setKey] = useState('schedule');
 
-    const events = [
+    let events = [
          {
                 _id: 1,
                 title: 'Arugula',
                 dtm: 24,
+<<<<<<< HEAD
                 date: '2022-06-01',
                 username: 'mcnairjm',
                 plantingDates: '2022-07-01'
@@ -47,12 +49,34 @@ const PageTabs = () => {
                 title: 'Arugula',
                 dtm: 24,
                 date: '2022-07-01',
+=======
+                harvestDate: '2022-05-01',
+>>>>>>> develop-mcnair
                 username: 'mcnairjm',
                 plantingDates: '2022-05-01'
+            },
+
+            {
+                _id: 2,
+                title: 'Basil',
+                dtm: 54,
+                harvestDate: '2022-06-23',
+                username: 'mcnairjm',
+                platingDates: '2022-05-01'
             }
         
         
     ]
+
+    const newEvents = events.map(({
+        harvestDate: date,
+        ...rest
+    }) => ({
+        date,
+        ...rest
+    }));
+
+    console.log(newEvents);
 
     // Sorts events by planting dates 
     const sortedEvents = events.slice().sort(function(a,b){
@@ -60,6 +84,9 @@ const PageTabs = () => {
         // to get a value that is either negative, positive, or zero.
         return new Date(b.plantingDates) - new Date(a.plantingDates);
     });
+    
+        
+
     
     
     return (
@@ -77,7 +104,7 @@ const PageTabs = () => {
                     defaultView='dayGridMonth' 
                     plugins={[ dayGridPlugin ]} 
                     eventContent={renderEventContent}
-                    events={events}
+                    events={newEvents}
                 />
             </Tab>
             <Tab eventKey='plantDates' title='Plant Dates'>
