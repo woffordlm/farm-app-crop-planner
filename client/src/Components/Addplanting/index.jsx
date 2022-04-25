@@ -1,12 +1,11 @@
 import { motion } from "framer-motion";
-import { useQuery } from '@apollo/client';
-import Dropdown from 'react-bootstrap/Dropdown'
-import DropdownButton from 'react-bootstrap/DropdownButton';
+import { useMutation } from "@apollo/client";
+import React, { useState } from 'react';
 import Backdrop from "../Backdrop";
 import "./index.css"
-
-import React, { useState } from 'react';
+import { ADD_PLANTING } from "../../utils/mutations";
 import DatePicker from 'react-date-picker';
+import context from "react-bootstrap/esm/AccordionContext";
 
 const dropIn = {
     hidden: {
@@ -30,45 +29,50 @@ const dropIn = {
 };
 
 const Addplanting = ({ handleClose,modalOpen,data, text }) => {
-//  console.log('data:', data)
- const [value, onChange] = useState(new Date());
+    console.log(' context.username:',  context.username)
+    // data coming in that we are referencing to 
+    console.log('data:', data)
+    // this saves the value of datepicker
+    const [value, onChange] = useState(new Date());
+    // this sets up our state form with default empty values
+    const [formState, setFormState] = useState({ cropType: '', dtm: '', harvestDate: "" });
 
- const [formState, setFormState] = useState({ cropType: '', dtm: '30', username: 'kana' });
-
- console.log('formState:', formState)
- const handleDropCropChange = (event) => {
-    let chosenName = event.target.value
-    setFormState({...formState, cropType:chosenName })
-  
-// for (let i = 0; i < data.allCrops.length; i++) {
-//       if (data.allCrops[i].name === chosenName) {
-//         var savedDTM = data.allCrops[i].dtm;
-//         console.log("savedDTM:", savedDTM);
-//         setFormState({ ...formState, dtm: savedDTM });
-//         return;
-//       }
-//     }
-}
-
-console.log('value:', value)
-console.log('formState:', formState)
-
-
-// submit form
-const handleFormSubmit = async (event) => {
-    event.preventDefault();
-
-    try {
-      await Addplanting({
-        variables: { plantingInfo },
-      });
-
-      // clear form value
-      setFormState({ cropType: '', dtm: '30', username: 'kana', harvestDate: '' });
-    } catch (e) {
-      console.error(e);
+    
+    const handleDropCropChange = (event) => {
+        // this saves the chosen vegetable to state
+        let chosenName = event.target.value
+        setFormState({...formState, cropType:chosenName })
+        
+        // this loops through the data that is provided to component
+        // this loops matches the vegetable name chosen to an object with the same name
+        // then it pulls the associated dtm and saves the dtm in state
+        // for (let i = 0; i < data.allCrops.length; i++) {
+        //     if (data.allCrops[i].name === chosenName) {
+        //     var savedDTM = data.allCrops[i].dtm;
+        //     console.log("savedDTM:", savedDTM);
+        //     setFormState({ ...formState, dtm: savedDTM });
+        //     return;
+        //     }
+        // }
     }
-  };
+        console.log('value:', value)
+        console.log('formState:', formState)
+    // setFormState({...formState, harvestDate:value })
+
+
+    const [addPlantingMutation, { error }] = useMutation(ADD_PLANTING);
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+        try {
+        await addPlantingMutation({
+            variables: { formState },
+        });
+        // clear form value
+        setFormState({ cropType: '', dtm: '', harvestDate: '' });
+        } catch (e) {
+            console.error(e);
+        }
+    };
 
 
 
