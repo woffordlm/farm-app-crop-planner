@@ -21,10 +21,10 @@ function Home() {
         <div className="App">
           <header className="App-header">
             <div className= "row" >
-              <Practice data = {data}/>
+            
             {/* <Header/> */}
-            {/* <PageTabs /> 
-            <Sidebar data = {data}/> */}
+            <PageTabs /> 
+            <Sidebar data = {data}/> 
             </div>     
           </header>
         </div>
