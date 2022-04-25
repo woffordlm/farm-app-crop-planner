@@ -34,6 +34,7 @@ const resolvers = {
         console.log('args:', args)
         const user = await User.create(args);
         const token = signToken(user);
+        console.log("you are logged in ")
         return { token, user };
       },
       login: async (parent, { email, password }) => {
@@ -49,6 +50,7 @@ const resolvers = {
           throw new AuthenticationError('Incorrect credentials');
         }
         const token = signToken(user);
+        console.log('you made IIIIIIIITTTT')
         return { token, user };
       },
       addPlanting: async (parent, args) => {

@@ -20,7 +20,6 @@ function Home() {
         <div className="App">
           <header className="App-header">
             <div className= "row" >
-            
             <Header/>
             <PageTabs /> 
             <Sidebar data = {data}/> 

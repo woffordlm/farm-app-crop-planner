@@ -23,7 +23,7 @@ mutation Mutation($username: String!, $email: String!, $password: String!) {
       allPlantings {
         _id
         cropType
-        DTM
+        dtm
         harvestDate
         username
       }
