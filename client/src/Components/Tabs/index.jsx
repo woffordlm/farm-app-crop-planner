@@ -30,13 +30,37 @@ const PageTabs = () => {
                 _id: 1,
                 title: 'Arugula',
                 dtm: 24,
-                date: '2022-05-01',
+                date: '2022-06-01',
+                username: 'mcnairjm',
+                plantingDates: '2022-07-01'
+            },
+            {
+                _id: 2,
+                title: 'Arugula',
+                dtm: 24,
+                date: '2022-02-01',
+                username: 'mcnairjm',
+                plantingDates: '2022-04-01'
+            },
+            {
+                _id: 3,
+                title: 'Arugula',
+                dtm: 24,
+                date: '2022-07-01',
                 username: 'mcnairjm',
                 plantingDates: '2022-05-01'
             }
         
         
     ]
+
+    // Sorts events by planting dates 
+    const sortedEvents = events.slice().sort(function(a,b){
+        // Turn your strings into dates, and then subtract them
+        // to get a value that is either negative, positive, or zero.
+        return new Date(b.plantingDates) - new Date(a.plantingDates);
+    });
+    
     
     return (
         <>
@@ -57,7 +81,23 @@ const PageTabs = () => {
                 />
             </Tab>
             <Tab eventKey='plantDates' title='Plant Dates'>
-                Dates
+                <table className="table table-striped table-light">
+                <caption>List of plantings with planting dates</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Planting Date</th>
+                            <th scope="col">Plant</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {sortedEvents && sortedEvents.map(sortedEvents => (
+                        <tr value={sortedEvents.title} key={sortedEvents._id}>
+                            <td>{sortedEvents.plantingDates}</td>
+                            <td>{sortedEvents.title}</td>
+                        </tr>
+                    ))}
+                    </tbody>
+                </table>
             </Tab>
         </Tabs>
     </>
