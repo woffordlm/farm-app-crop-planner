@@ -31,7 +31,7 @@ const PageTabs = () => {
                 _id: 1,
                 title: 'Arugula',
                 dtm: 24,
-                date: '2022-06-01',
+                harvestDate: '2022-06-01',
                 username: 'mcnairjm',
                 plantingDates: '2022-07-01'
             },
@@ -39,7 +39,7 @@ const PageTabs = () => {
                 _id: 2,
                 title: 'Arugula',
                 dtm: 24,
-                date: '2022-02-01',
+                harvestDate: '2022-02-01',
                 username: 'mcnairjm',
                 plantingDates: '2022-04-01'
             },
@@ -47,18 +47,18 @@ const PageTabs = () => {
                 _id: 3,
                 title: 'Arugula',
                 dtm: 24,
-                date: '2022-07-01',
+                harvestDate: '2022-07-01',
                 username: 'mcnairjm',
                 plantingDates: '2022-05-01'
             },
 
             {
-                _id: 2,
+                _id: 4,
                 title: 'Basil',
                 dtm: 54,
                 harvestDate: '2022-06-23',
                 username: 'mcnairjm',
-                platingDates: '2022-05-01'
+                plantingDates: '2022-05-01'
             }
         
         

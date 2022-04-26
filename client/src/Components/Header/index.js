@@ -1,6 +1,7 @@
 import SignUp from '../SignUp/signup';
 import LogIn from '../Login/Login';
 import "./index.css";
+import auth from '../../utils/auth';
 
 import {
   Navbar,
@@ -9,6 +10,12 @@ import {
   Nav} from "react-bootstrap"
 
 const Header = () => {
+
+  const logout = event => {
+    event.preventDefault();
+    auth.logout();
+  };
+  
   return (
     <header className="col container">
      <Navbar expand={false}>
@@ -25,8 +32,21 @@ const Header = () => {
       </Offcanvas.Header>
       <Offcanvas.Body>
         <Nav className="justify-content-end flex-grow-1 pe-3">
-          <SignUp/>
-          <LogIn/>
+          
+        {auth.loggedIn() ? (
+            <>
+              
+              <a href="/" onClick={logout}>
+                Logout
+              </a>
+            </>
+          ) : (
+            <>
+              <SignUp/>
+              <LogIn/>
+            </>
+          )}
+         
         </Nav>
       </Offcanvas.Body>
     </Navbar.Offcanvas>
