@@ -26,6 +26,7 @@ function MydModalWithGrid(props) {
                 <Col xs={12} md={8}>
                 <div>
                 <image src = {require(`../../assets/photos/arugula.jpg`)}></image>
+                {/* <image src={require(`../../assets/small/${data.name}.jpg`)}></image> */}
                    </div>
                 </Col>
                 <Col xs={6} md={4}>
