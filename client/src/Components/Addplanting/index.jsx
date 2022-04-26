@@ -6,6 +6,7 @@ import "./index.css"
 import { ADD_PLANTING } from "../../utils/mutations";
 import DatePicker from 'react-date-picker';
 import auth from '../../utils/auth';
+import { QUERY_PLANTINGS } from '../../utils/queries';
 
 const dropIn = {
     hidden: {
@@ -46,7 +47,9 @@ const Addplanting = ({ handleClose,modalOpen,data, text }) => {
         console.log("dateChange1!!!!!!!!!",date)
         setFormState({...formState, harvestDate: date})
       }
-    const [addPlantingMutation, { error }] = useMutation(ADD_PLANTING);
+    const [addPlantingMutation, { error }] = useMutation(ADD_PLANTING, {
+        refetchQueries: [QUERY_PLANTINGS]
+    });
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
