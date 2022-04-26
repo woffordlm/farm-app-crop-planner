@@ -3,11 +3,9 @@ import {
   Modal,
   Container,
   Row,
-  Col,
-  Image
-
+  Col
 } from "react-bootstrap"
-
+// import arugula from "../../../public/photos/arugula.jpg"
 function MydModalWithGrid(props) {
     console.log('props:', props)
     console.log ("hitttttt", props.data)
@@ -22,21 +20,18 @@ function MydModalWithGrid(props) {
           <Container>
             {props.data?.allCrops?.map(data => (
             <div>
-              <Row>
+              {/* <Row>
                 <Col xs={12} md={8}>
                 <div>
-                <image src = {require(`../../assets/photos/arugula.jpg`)}></image>
-                {/* <image src={require(`../../assets/small/${data.name}.jpg`)}></image> */}
+                <image src={arugula.jpg}></image>
                    </div>
                 </Col>
                 <Col xs={6} md={4}>
-                Ready to harvest {data.dtm} 
+                {data.name}
                 </Col>
-              </Row>
-    
+              </Row> */}
               <Row>
-                <Col xs={6} md={4}>
-                
+                <Col style xs={6} md={4}>
                 {data.name}
                 </Col>
                 <Col xs={6} md={4}>
@@ -46,6 +41,7 @@ function MydModalWithGrid(props) {
                   Harvest Window: {data.harvestwindow}
                 </Col>
               </Row>
+              <hr/>
               </div>
             ))}
             
