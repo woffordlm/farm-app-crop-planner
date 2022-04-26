@@ -28,11 +28,12 @@ const SignUp = () => {
       ...formState,
       [name]: value,
     });
-    console.log('formState:', formState)
 
   };
   // submit form
   const handleFormSubmit = async (event) => {
+    console.log('formState:', formState)
+
     event.preventDefault();
     try {
       const { data } = await addUser({
@@ -48,7 +49,7 @@ const SignUp = () => {
   return (
           <form onSubmit={handleFormSubmit}>
           <h4 href="/signup">Signup</h4>
-          <input  className="form-input m-2"
+          <input  className="bg-light form-input m-2"
                 placeholder="Your username"
                 name="username"
                 type="username"
@@ -57,7 +58,7 @@ const SignUp = () => {
                 onChange={handleChange}
                 />
           <input
-                className="form-input m-2"
+                className="bg-light form-input m-2"
                 placeholder="Your email"
                 name="email"
                 type="email"
@@ -66,7 +67,7 @@ const SignUp = () => {
                 onChange={handleChange}
                  />
           <input 
-               className="form-input m-2"
+               className="bg-light form-input m-2"
                placeholder="******"
                name="password"
                type="password"
