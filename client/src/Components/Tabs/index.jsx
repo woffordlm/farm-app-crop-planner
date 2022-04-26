@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useQuery } from '@apollo/client';
 import {
     Tabs,
     Tab,
@@ -6,10 +7,9 @@ import {
 
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
-
-
+import { QUERY_PLANTINGS } from '../../utils/queries';
 import './index.css';
-
+import { format } from 'date-fns'
 
 function renderEventContent(eventinfo) {
     return (
@@ -20,13 +20,25 @@ function renderEventContent(eventinfo) {
     )
 }
 
-
-
 const PageTabs = () => {
     
     const [key, setKey] = useState('schedule');
+    const { loading, data } = useQuery(QUERY_PLANTINGS);
+    console.log('data:', data)
 
-    let events = [
+    const plantings = data?.allPlantings || [];
+    console.log('plantings:', plantings)
+
+    const plantingData = data?.allPlantings?.map(plant => {
+        const formattedDate = format(Date.parse(plant.harvestDate), 'yyyy/MM/dd').replace('/', '-').replace('/', '-')
+        return {
+            title: plant.cropType,
+            date: formattedDate
+        }
+    })
+
+    
+     let events = [
          {
                 _id: 1,
                 title: 'Arugula',
@@ -62,9 +74,9 @@ const PageTabs = () => {
             }
         
         
-    ]
+    ] 
 
-    const newEvents = events.map(({
+     const newEvents = events.map(({
         harvestDate: date,
         ...rest
     }) => ({
@@ -80,8 +92,8 @@ const PageTabs = () => {
         // to get a value that is either negative, positive, or zero.
         return new Date(b.plantingDates) - new Date(a.plantingDates);
     });
-    
-        
+     
+
 
     
     
@@ -100,7 +112,7 @@ const PageTabs = () => {
                     defaultView='dayGridMonth' 
                     plugins={[ dayGridPlugin ]} 
                     eventContent={renderEventContent}
-                    events={newEvents}
+                    events={plantingData}
                 />
             </Tab>
             <Tab eventKey='plantDates' title='Plant Dates'>
@@ -115,8 +127,8 @@ const PageTabs = () => {
                     <tbody>
                     {sortedEvents && sortedEvents.map(sortedEvents => (
                         <tr value={sortedEvents.title} key={sortedEvents._id}>
-                            <td>{sortedEvents.plantingDates}</td>
-                            <td>{sortedEvents.title}</td>
+                            <td>{}</td>
+                            <td>{}</td>
                         </tr>
                     ))}
                     </tbody>
