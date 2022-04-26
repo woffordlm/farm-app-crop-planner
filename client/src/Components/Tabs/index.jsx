@@ -31,82 +31,45 @@ const PageTabs = () => {
 
     const plantingData = data?.allPlantings?.map(plant => {
         const formattedDate = format(Date.parse(plant.harvestDate), 'yyyy/MM/dd').replace('/', '-').replace('/', '-')
+        const previousDayDate = new Date(formattedDate)
+        previousDayDate.setDate(previousDayDate.getDate() - plant.dtm)
+        console.log(previousDayDate)
+        const previousDayDateString = previousDayDate.toString();
+        console.log(previousDayDateString);
+        const plantingDate = format(Date.parse(previousDayDate), 'MM/dd/yyyy')
+        console.log(plantingDate)
         return {
             title: plant.cropType,
-            date: formattedDate
+            date: formattedDate,
+            plantingDate: plantingDate
         }
     })
 
-    
-     let events = [
-         {
-                _id: 1,
-                title: 'Arugula',
-                dtm: 24,
-                harvestDate: '2022-06-01',
-                username: 'mcnairjm',
-                plantingDates: '2022-07-01'
-            },
-            {
-                _id: 2,
-                title: 'Arugula',
-                dtm: 24,
-                harvestDate: '2022-02-01',
-                username: 'mcnairjm',
-                plantingDates: '2022-04-01'
-            },
-            {
-                _id: 3,
-                title: 'Arugula',
-                dtm: 24,
-                harvestDate: '2022-07-01',
-                username: 'mcnairjm',
-                plantingDates: '2022-05-01'
-            },
-
-            {
-                _id: 4,
-                title: 'Basil',
-                dtm: 54,
-                harvestDate: '2022-06-23',
-                username: 'mcnairjm',
-                plantingDates: '2022-05-01'
-            }
-        
-        
-    ] 
-
-     const newEvents = events.map(({
-        harvestDate: date,
-        ...rest
-    }) => ({
-        date,
-        ...rest
-    }));
-
-    console.log(newEvents);
+   
+  
 
     // Sorts events by planting dates 
-    const sortedEvents = events.slice().sort(function(a,b){
+    const sortedEvents = plantings.slice().sort(function(a,b){
         // Turn your strings into dates, and then subtract them
         // to get a value that is either negative, positive, or zero.
         return new Date(b.plantingDates) - new Date(a.plantingDates);
     });
-     
+    
+    
 
 
     
     
     return (
         <>
-        <h1 className='head'>CROP CALENDAR</h1>
+        {/* <h1 className='head'>CROP CALENDAR</h1> */}
         <Tabs
             id='controlled-tab'
             activeKey={key}
             onSelect={(key) => setKey(key)}
             className='Tabs' 
         >
-            <Tab eventKey='schedule' title='Schedule'>
+            <Tab eventKey='schedule' title='Harvest Schedule'>
                 <FullCalendar 
                     className='calendar' 
                     defaultView='dayGridMonth' 
@@ -115,7 +78,7 @@ const PageTabs = () => {
                     events={plantingData}
                 />
             </Tab>
-            <Tab eventKey='plantDates' title='Plant Dates'>
+            <Tab eventKey='plantDates' title='Planting Dates'>
                 <table className="table table-striped table-light">
                 <caption>List of plantings with planting dates</caption>
                     <thead>
@@ -125,10 +88,10 @@ const PageTabs = () => {
                         </tr>
                     </thead>
                     <tbody>
-                    {sortedEvents && sortedEvents.map(sortedEvents => (
-                        <tr value={sortedEvents.title} key={sortedEvents._id}>
-                            <td>{}</td>
-                            <td>{}</td>
+                    {plantingData && plantingData.map(plantingData => (
+                        <tr value={plantingData.title} key={plantingData._id}>
+                            <td>{plantingData.plantingDate}</td>
+                            <td>{plantingData.title}</td>
                         </tr>
                     ))}
                     </tbody>

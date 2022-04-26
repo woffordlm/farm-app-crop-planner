@@ -7,17 +7,13 @@
     
     
 }
-.calendar {
-    margin-top: 40px;
 
-    background-color: blue;
+.fc {
+    aspect-ratio: 3;
 }
+
 .fade {
     opacity: 1;
 }
 
-.fc {
-    margin-left: -15px;
-    padding: 0 18px 0 20px;
-}
 
