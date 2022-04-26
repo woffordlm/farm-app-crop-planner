@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useQuery } from '@apollo/client';
 import {
     Tabs,
     Tab,
@@ -6,6 +7,9 @@ import {
 
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
+import { QUERY_PLANTINGS } from '../../utils/queries';
+
+
 
 
 import './index.css';
@@ -25,8 +29,13 @@ function renderEventContent(eventinfo) {
 const PageTabs = () => {
     
     const [key, setKey] = useState('schedule');
+    const { loading, data } = useQuery(QUERY_PLANTINGS);
 
-    let events = [
+    const plantings = data?.plantings || [];
+    console.log(plantings);
+
+
+     let events = [
          {
                 _id: 1,
                 title: 'Arugula',
@@ -62,9 +71,9 @@ const PageTabs = () => {
             }
         
         
-    ]
+    ] 
 
-    const newEvents = events.map(({
+     const newEvents = events.map(({
         harvestDate: date,
         ...rest
     }) => ({
@@ -80,8 +89,8 @@ const PageTabs = () => {
         // to get a value that is either negative, positive, or zero.
         return new Date(b.plantingDates) - new Date(a.plantingDates);
     });
-    
-        
+     
+
 
     
     
@@ -115,8 +124,8 @@ const PageTabs = () => {
                     <tbody>
                     {sortedEvents && sortedEvents.map(sortedEvents => (
                         <tr value={sortedEvents.title} key={sortedEvents._id}>
-                            <td>{sortedEvents.plantingDates}</td>
-                            <td>{sortedEvents.title}</td>
+                            <td>{}</td>
+                            <td>{}</td>
                         </tr>
                     ))}
                     </tbody>
