@@ -14,8 +14,6 @@ function Home() {
  
   // const { data: userData } = useQuery(QUERY_ME);
 
-
-
   return (
         <div className="App">
           <header className="App-header">
