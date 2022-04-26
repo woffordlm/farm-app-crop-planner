@@ -1,8 +1,11 @@
-    .container {
+  /*   .container {
         position: absolute;
         top: 2px;
         right: 2px;
         padding-bottom: 5px;
       } 
-  
-        
+   */
+
+  .col-container {
+    margin-bottom: -60px;
+  }
