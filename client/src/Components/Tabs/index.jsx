@@ -10,6 +10,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import { QUERY_PLANTINGS } from '../../utils/queries';
 import './index.css';
 import { format } from 'date-fns'
+import auth from '../../utils/auth';
 
 function renderEventContent(eventinfo) {
     return (
@@ -69,7 +70,9 @@ const PageTabs = () => {
             onSelect={(key) => setKey(key)}
             className='Tabs' 
         >
+            
             <Tab eventKey='schedule' title='Harvest Schedule'>
+            {auth.loggedIn() ? (
                 <FullCalendar 
                     className='calendar' 
                     defaultView='dayGridMonth' 
@@ -77,8 +80,16 @@ const PageTabs = () => {
                     eventContent={renderEventContent}
                     events={plantingData}
                 />
+            ) : (
+                <FullCalendar
+                    className='calendar'
+                    defaultView='dayGridMonth'
+                    plugins={[ dayGridPlugin ]}
+                    />
+            )}
             </Tab>
             <Tab eventKey='plantDates' title='Planting Dates'>
+                {auth.loggedIn() ? (
                 <table className="table table-striped table-light">
                 <caption>List of plantings with planting dates</caption>
                     <thead>
@@ -96,6 +107,18 @@ const PageTabs = () => {
                     ))}
                     </tbody>
                 </table>
+                ) : (
+                    <table className="table table-striped table-light">
+                <caption>List of plantings with planting dates</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Planting Date</th>
+                            <th scope="col">Plant</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                    </table>
+                )}
             </Tab>
         </Tabs>
     </>
