@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import Dropdown from 'react-bootstrap/Dropdown'
-import DropdownButton from 'react-bootstrap/DropdownButton';
+import { useMutation } from "@apollo/client";
+import React, { useState } from 'react';
 import Backdrop from "../Backdrop";
 import "./index.css"
-
-import React, { useState } from 'react';
+import { ADD_PLANTING } from "../../utils/mutations";
 import DatePicker from 'react-date-picker';
+import auth from '../../utils/auth';
 
 const dropIn = {
     hidden: {
@@ -29,12 +29,40 @@ const dropIn = {
 };
 
 const Addplanting = ({ handleClose,modalOpen,data, text }) => {
-console.log('data:', data)
+    const { data: { username }} = auth.getProfile()
+    const [formState, setFormState] = useState({ cropType: '', dtm: 0, harvestDate: new Date() });
+
+    const handleDropCropChange = (event) => {
+        let chosenName = event.target.value;
+        const foundDtm = data.allCrops.find((crop) => crop.name === chosenName);
+    
+        setFormState({ ...formState, cropType: chosenName, dtm: foundDtm.dtm });
+      };
+    
+    console.log("FORM STATE ", formState);
+
+    
+    const onDateChange =(date)=> {
+        console.log("dateChange1!!!!!!!!!",date)
+        setFormState({...formState, harvestDate: date})
+      }
+    const [addPlantingMutation, { error }] = useMutation(ADD_PLANTING);
+
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+        try {
+        // $cropType: String!, $username: String!, $dtm: Int!, $harvestDate: String!
+        await addPlantingMutation({
+            variables: { cropType: formState.cropType, username, dtm: formState.dtm, harvestDate: formState.harvestDate.toString()  },
+        });
+        // clear form value
+        setFormState({ cropType: '', dtm: '', harvestDate: '' });
+        } catch (e) {
+            console.error(e);
+        }
+    };
 
 
-
-
-    const [value, onChange] = useState(new Date());
 
     return (
         <Backdrop onClick={handleClose}>
@@ -46,25 +74,29 @@ console.log('data:', data)
             animate="visible"
             exit="exit"
             > 
-                <form>
+                <form onSubmit={handleFormSubmit}>
                     <label>
                 <h2>{"What vegetable do you want to plant ? "}
                    
-                    <select className="close-button">
-                        {console.log()}
-                        <option defaultValue={"Select Plant"}>Select Plant</option>
-                        <option value="grapefruit">Grapefruit</option>
-                        <option value="lime">Lime</option>
-                        <option value="coconut">Coconut</option>
-                        <option value="mango">Mango</option>
+                    <select name = "cropType" className="close-button"onChange = {handleDropCropChange}>
+                    <option defaultValue={"Select Plant"}>Select Plant</option>
+                        {data?.allCrops?.map(data => (
+                            <option value={data.name} key={data._id}>{data.name}</option>
+                        ))}      
                     </select>
+                
+
+               
                 </h2>
                     </label>
                 <h2>{"When do you want to harvest it ? "}
-                    <DatePicker onChange={onChange} value={value} className="calendar-select-planting"/>
+                    <DatePicker name= "datePicker" onChange={onDateChange} value={formState.harvestDate} className="calendar-select-planting"/>
                 </h2>
                 
-                    <input type="submit" value="Submit" className="close-button" />
+                    {/* <input  type="submit" value="Submit" className="close-button" /> */}
+                    <button className="close-button" type="submit" value= "Submit">
+          Submit
+        </button>
                 </form>
                 
                 <br></br>

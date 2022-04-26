@@ -21,7 +21,7 @@ import { useState } from 'react';
 
 const Sidebar = ({data}) => {
 
-console.log('data:', data.allCrops[2].name)
+// console.log('data:', data.allCrops[2].name)
 
 
     const [modalOpen, setModalOpen] = useState(false);
