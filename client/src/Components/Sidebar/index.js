@@ -14,19 +14,17 @@ import { FiHome, FiLogOut, FiArrowLeftCircle, FiArrowRightCircle } from "react-i
 import { BiCog } from "react-icons/bi";
 import { GiCorn } from 'react-icons/gi';
 import { TiPlus } from 'react-icons/ti'; 
-
+import MydModalWithGrid from '../CropGuide';
 import 'react-pro-sidebar/dist/css/styles.css';
 import './index.css';
 import { useState } from 'react';
 
 const Sidebar = ({data}) => {
-
-// console.log('data:', data.allCrops[2].name)
-
-
+    const [modalShow, setModalShow] = useState(false);
+    const closeModal = () => setModalShow(false)
     const [modalOpen, setModalOpen] = useState(false);
-  const close = () => setModalOpen(false);
-  const open = () => setModalOpen(true);
+    const close = () => setModalOpen(false);
+    const open = () => setModalOpen(true);
     const [menuCollapse, setMeunCollapse] = useState(false)
 
     const menuIconClick = () => {
@@ -60,16 +58,18 @@ const Sidebar = ({data}) => {
                             {menuCollapse ? <TiPlus/> : <p className='addPlantingText'>Add A Planting</p>}
                         </motion.button>              
                         <AnimatePresence
-                        initial={false}
-                        exitBeforeEnter={true}
-                        onExitComplete={() => null}
+                            initial={false}
+                            exitBeforeEnter={true}
+                            onExitComplete={() => null}
                         >
                         {modalOpen && <Addplanting data = {data}  modalOpen={modalOpen} handleClose={close} />}
                         </AnimatePresence>
                         <MenuItem active={true} icon={<FiHome />}>
                             Home
                         </MenuItem>
-                        <MenuItem active={true} icon={<FaList />}>Crop Guide</MenuItem>
+                        <MenuItem onClick={() => setModalShow(true)} active={true} icon={<FaList />}>Crop Guide
+                        </MenuItem>
+                        <MydModalWithGrid data = {data} show={modalShow} onHide={closeModal}></MydModalWithGrid>
                         <MenuItem active={true} icon={<BiCog />}>Settings</MenuItem>
                     </Menu> 
                 </SidebarContent>
