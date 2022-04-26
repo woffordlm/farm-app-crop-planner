@@ -25,12 +25,11 @@ query Query {
 export const QUERY_PLANTINGS= gql`
   query allPlantings($username: String) {
     allPlantings(username: $username) {
-      _id: ID
-      cropType: String
-      dtm: Int
-      harvestDate: String
-      username: String   
-      plantingDate: String
+      _id
+      cropType
+      dtm
+      harvestDate
+      username
     }
   }
 `;
