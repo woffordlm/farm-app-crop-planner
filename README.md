@@ -1,6 +1,6 @@
 <h1 align="center">Cropify</h1>
 <p align="center">Be the first to get you heirloom tomatoes to market with Cropify. Set the date of when you want to harvest your desired crops, and Cropify's calendar will tell you when to plant. Cropify knows every crop's Days to Maturity (DTM) and Harvest Window to give you the exact week when you should expect results. </p>
- <img src=">
+ <img src="https://github.com/woffordlm/farm-app-crop-planner/blob/main/client/public/photos/readme1.jpg?raw=true" align="center" >
 
 ## Authors
 
@@ -9,10 +9,20 @@
 - [Jonathan Werz](https://github.com/jdwerz83)
 - [Luke Wofford](https://github.com/woffordlm)
 
+<img src="https://github.com/woffordlm/farm-app-crop-planner/blob/main/client/public/photos/readme2.jpg?raw=true">
+
 ## Deployment
 
 - [Github](https://github.com/woffordlm/farm-app-crop-planner)
 - [Heroku](placeholder here)
+
+<img src="https://github.com/woffordlm/farm-app-crop-planner/blob/main/client/public/photos/screenshot1.png?raw=true">
+
+## Installation
+
+<p>After installing npm packages, type nodemon server.js and open your browser to localhost:3000.</p>
+
+<img src="https://github.com/woffordlm/farm-app-crop-planner/blob/main/client/public/photos/screenshot2.png?raw=true">
 
 ## Technologies
 
