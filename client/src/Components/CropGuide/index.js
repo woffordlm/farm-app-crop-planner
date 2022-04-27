@@ -31,7 +31,7 @@ function MydModalWithGrid(props) {
                 </Col>
               </Row> */}
               <Row>
-                <Col style xs={6} md={4}>
+                <Col  xs={6} md={4}>
                 {data.name}
                 </Col>
                 <Col xs={6} md={4}>
