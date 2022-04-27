@@ -85,6 +85,7 @@ const Addplanting = ({ handleClose,modalOpen,data, text }) => {
                     <option defaultValue={"Select Plant"}>Select Plant</option>
                         {data?.allCrops?.map(data => (
                             <option value={data.name} key={data._id}>{data.name}</option>
+                            
                         ))}      
                     </select>
                 

@@ -60,7 +60,7 @@ const LogIn = () => {
           <form onSubmit={handleFormSubmit}>
             <h4 href="/login">Login</h4>
             <input
-              className="form-input m-2"
+              className="bg-light form-input m-2"
               placeholder="Your email"
               name="email"
               type="email"
@@ -69,7 +69,7 @@ const LogIn = () => {
               onChange={handleChange}
             />
             <input
-              className="form-input m-2"
+              className=" bg-light form-input m-2"
               placeholder="******"
               name="password"
               type="password"

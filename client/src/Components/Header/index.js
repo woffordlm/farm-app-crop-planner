@@ -17,7 +17,7 @@ const Header = () => {
   };
   
   return (
-    <header className="col container">
+    <header className="col-container">
      <Navbar expand={false}>
     <Container fluid>
     {/* <Navbar.Brand href="#">Crop Planner</Navbar.Brand> */}

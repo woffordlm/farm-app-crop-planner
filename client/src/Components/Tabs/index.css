@@ -3,20 +3,17 @@
 }
 
 .Tabs {
-    margin-left: 75px;
+    margin-left: 0px;
     
     
 }
-.calendar {
-    margin-top: 40px;
-    background-color: blue;
+
+.fc {
+    aspect-ratio: 3;
 }
+
 .fade {
     opacity: 1;
 }
 
-.fc {
-    margin-left: 80px;
-    padding: 0 18px 0 20px;
-}
 
