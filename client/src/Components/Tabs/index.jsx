@@ -34,11 +34,8 @@ const PageTabs = () => {
         const formattedDate = format(Date.parse(plant.harvestDate), 'yyyy/MM/dd').replace('/', '-').replace('/', '-')
         const previousDayDate = new Date(formattedDate)
         previousDayDate.setDate(previousDayDate.getDate() - plant.dtm)
-        console.log(previousDayDate)
-        const previousDayDateString = previousDayDate.toString();
-        console.log(previousDayDateString);
         const plantingDate = format(Date.parse(previousDayDate), 'MM/dd/yyyy')
-        console.log(plantingDate)
+        
         return {
             title: plant.cropType,
             date: formattedDate,
@@ -48,7 +45,7 @@ const PageTabs = () => {
 
    
   
-
+/* 
     // Sorts events by planting dates 
     const sortedEvents = plantings.slice().sort(function(a,b){
         // Turn your strings into dates, and then subtract them
@@ -56,7 +53,7 @@ const PageTabs = () => {
         return new Date(b.plantingDates) - new Date(a.plantingDates);
     });
     
-    
+     */
 
 
     
