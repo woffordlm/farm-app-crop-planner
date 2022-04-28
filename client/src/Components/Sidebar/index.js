@@ -37,7 +37,7 @@ const Sidebar = ({data}) => {
             <ProSidebar collapsed={menuCollapse}>
                 <SidebarHeader>
                 <div className='logoText'>
-                    {menuCollapse ? <p className='cornIcon'><GiCorn/></p> : <p className='cornAndText'><GiCorn/>  Crop App</p>}
+                    {menuCollapse ? <p className='cornIcon'><GiCorn/></p> : <p className='cornAndText'><GiCorn/>  Cropify</p>}
                 </div>
                 <div className='closemenu' onClick={menuIconClick}>
                     {menuCollapse ? (
