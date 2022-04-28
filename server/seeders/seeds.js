@@ -6,37 +6,37 @@ db.once('open', async () => {
 const plantSeeds = await CropReference.insertMany(
     [
         {
-            "name": "Arugula",
+            "name": "arugula",
             "dtm": 28,
             "harvestwindow": 14,
             "sowingDates": "Feb. 1st - Mar. 30th"
            },
            {
-            "name": "Baby kale",
+            "name": "baby-kale",
             "dtm": 30,
             "harvestwindow": 14,
             "sowingDates": "Feb. 15th - Jun. 30th"
            },
            {
-            "name": "Baby Mustard",
+            "name": "baby-mustard",
             "dtm": 30,
             "harvestwindow": 14,
             "sowingDates": "Feb. 15th - Jun. 30th"
            },
            {
-            "name": "Basil",
+            "name": "basil",
             "dtm": 70,
             "harvestwindow": 14,
             "sowingDates": "May 1st - Jul. 30th"
            },
            {
-            "name": "Beets",
+            "name": "beets",
             "dtm": 70,
             "harvestwindow": 20,
             "sowingDates": "Mar. 1st - Apr. 15th"
            },
            {
-            "name": "Beans",
+            "name": "beans",
             "dtm": 50,
             "harvestwindow": 21,
             "sowingDates": "Apr. 1st - Sept. 30th"
@@ -48,43 +48,43 @@ const plantSeeds = await CropReference.insertMany(
             "sowingDates": "Apr. 1st - Sept. 30th"
            },
            {
-            "name": "Broccoli",
+            "name": "broccoli",
             "dtm": 85,
             "harvestwindow": 14,
             "sowingDates": "Feb. 15th - Apr. 15th"
            },
            {
-            "name": "Brussel Sprouts",
+            "name": "brussel-sprouts",
             "dtm": 120,
             "harvestwindow": 21,
             "sowingDates": "Jul. 15th - Sept. 15th"
            },
            {
-            "name": "Carrots (Fresh)",
+            "name": "carrots",
             "dtm": 55,
             "harvestwindow": 20,
             "sowingDates": "Feb. 1st - Mar. 30th"
            },
            {
-            "name": "Cabbage - Chinese",
+            "name": "Cabbage-Chinese",
             "dtm": 80,
             "harvestwindow": 14,
             "sowingDates": "Mar. 15th - Mar. 30th"
            },
            {
-            "name": "Cabbage - Storage",
+            "name": "Cabbage-Storage",
             "dtm": 95,
             "harvestwindow": 14,
             "sowingDates": "Feb. 1st - Apr. 15th"
            },
            {
-            "name": "Cabbage - Savoy",
+            "name": "Cabbage-Savoy",
             "dtm": 75,
             "harvestwindow": 14,
             "sowingDates": "Feb. 1st - Apr. 15th"
            },
            {
-            "name": "Cabbage - Summer",
+            "name": "Cabbage-Summer",
             "dtm": 80,
             "harvestwindow": 14,
             "sowingDates": "Jul. 15th - Sept. 15th"
@@ -96,7 +96,7 @@ const plantSeeds = await CropReference.insertMany(
             "sowingDates": "Feb. 15th - Apr. 15th"
            },
            {
-            "name": "Celery Root",
+            "name": "celery-root",
             "dtm": 120,
             "harvestwindow": 14,
             "sowingDates": "Feb. 15th - Mar. 30th"
@@ -108,7 +108,7 @@ const plantSeeds = await CropReference.insertMany(
             "sowingDates": "Feb. 15th - Mar. 30th"
            },
            {
-            "name": "Coriander",
+            "name": "coriander",
             "dtm": 55,
             "harvestwindow": 14,
             "sowingDates": "Feb. 1st - Mar. 30th"
@@ -132,49 +132,49 @@ const plantSeeds = await CropReference.insertMany(
             "sowingDates": "Mar. 15th - Mar. 30th"
            },
            {
-            "name": "Eggplant (Field)",
+            "name": "eggplant",
             "dtm": 90,
             "harvestwindow": 72,
             "sowingDates": "Apr. 15th - Jun. 15th"
            },
            {
-            "name": "Fennel - Mini",
+            "name": "fennel",
             "dtm": 60,
             "harvestwindow": 14,
             "sowingDates": "Mar. 1st - Apr. 30th"
            },
            {
-            "name": "Frisée",
+            "name": "frisée",
             "dtm": 67,
             "harvestwindow": 14,
             "sowingDates": null
            },
            {
-            "name": "Garlic",
+            "name": "garlic",
             "dtm": 255,
             "harvestwindow": 14,
             "sowingDates": "Sept. 15th - Nov. 30th"
            },
            {
-            "name": "Green Onion",
+            "name": "green-onion",
             "dtm": 70,
             "harvestwindow": 14,
             "sowingDates": "Feb. 1st - Mar. 30th"
            },
            {
-            "name": "Kale",
+            "name": "kale",
             "dtm": 85,
             "harvestwindow": 98,
             "sowingDates": "Feb. 15th - Jun. 30th"
            },
            {
-            "name": "Kohlrabi",
+            "name": "kohlrabi",
             "dtm": 70,
             "harvestwindow": 14,
             "sowingDates": "Feb. 15th - Jul. 30th"
            },
            {
-            "name": "Leek Summer",
+            "name": "leek",
             "dtm": 130,
             "harvestwindow": 21,
             "sowingDates": "Feb. 15th - Jul. 30th"
@@ -186,31 +186,31 @@ const plantSeeds = await CropReference.insertMany(
             "sowingDates": "Feb. 15th - Jul. 30th"
            },
            {
-            "name": "Lettuce",
+            "name": "lettuce",
             "dtm": 48,
             "harvestwindow": 14,
             "sowingDates": "Feb. 1st - Apr. 30th"
            },
            {
-            "name": "Melons - Cantalope",
+            "name": "Melons-Cantalope",
             "dtm": 76,
             "harvestwindow": 21,
             "sowingDates": "Apr. 15th - Jul. 15th"
            },
            {
-            "name": "Melons - Watermelom",
+            "name": "Watermelon",
             "dtm": 76,
             "harvestwindow": 21,
             "sowingDates": "Apr. 15th - Jun. 30th"
            },
            {
-            "name": "Mesclun (salanova)",
+            "name": "mesclun",
             "dtm": 60,
             "harvestwindow": 27,
             "sowingDates": "Feb. 1st - Apr. 30th"
            },
            {
-            "name": "Onion - Storage",
+            "name": "onion",
             "dtm": 118,
             "harvestwindow": 12,
             "sowingDates": "Aug. 1st - Mar. 30th"
@@ -222,49 +222,49 @@ const plantSeeds = await CropReference.insertMany(
             "sowingDates": "Aug. 1st - Mar. 30th"
            },
            {
-            "name": "Pak Choi",
+            "name": "pak-choi",
             "dtm": 50,
             "harvestwindow": 14,
             "sowingDates": "Mar. 15th - Mar. 30th"
            },
            {
-            "name": "Peas",
+            "name": "peas",
             "dtm": 60,
             "harvestwindow": 21,
             "sowingDates": "Jan. 1st - Apr. 15th"
            },
            {
-            "name": "Peppers - Bell (Field)",
+            "name": "peppers",
             "dtm": 120,
             "harvestwindow": 60,
             "sowingDates": "Apr. 15th - Jul. 15th"
            },
            {
-            "name": "Peppers - Hot (Field)",
+            "name": "peppers",
             "dtm": 100,
             "harvestwindow": 15,
             "sowingDates": "Apr. 15th - Jul. 15th"
            },
            {
-            "name": "Radish",
+            "name": "radish",
             "dtm": 30,
             "harvestwindow": 14,
             "sowingDates": "Feb. 1st - Jun. 30th"
            },
            {
-            "name": "Rapini",
+            "name": "rapini",
             "dtm": 60,
             "harvestwindow": 14,
             "sowingDates": null
            },
            {
-            "name": "Rutabaga",
+            "name": "rutabaga",
             "dtm": 95,
             "harvestwindow": 21,
             "sowingDates": "Feb. 1st - Apr. 15th"
            },
            {
-            "name": "Spinach TR",
+            "name": "spinach",
             "dtm": 55,
             "harvestwindow": 28,
             "sowingDates": "Feb. 15th - Jun. 30th"
@@ -276,31 +276,31 @@ const plantSeeds = await CropReference.insertMany(
             "sowingDates": "Feb. 15th - Jun. 30th"
            },
            {
-            "name": "Sucrine",
+            "name": "sucrine",
             "dtm": 50,
             "harvestwindow": 14,
             "sowingDates": null
            },
            {
-            "name": "Summer Squash",
+            "name": "summer-squash",
             "dtm": 50,
             "harvestwindow": 42,
             "sowingDates": "Apr. 1st - Aug. 15th"
            },
            {
-            "name": "Swiss Chard",
+            "name": "swiss-chard",
             "dtm": 65,
             "harvestwindow": 84,
             "sowingDates": "Mar. 1st - Apr. 30th"
            },
            {
-            "name": "Tomato - Cherry (Greenhouse)",
+            "name": "cherry-tomato",
             "dtm": 145,
             "harvestwindow": 180,
             "sowingDates": "Apr. 15th - Jul. 15th"
            },
            {
-            "name": "Tomato - Heirloom (Greenhouse)",
+            "name": "heirloom-tomato",
             "dtm": 145,
             "harvestwindow": 180,
             "sowingDates": "Apr. 15th - Jul. 15th"

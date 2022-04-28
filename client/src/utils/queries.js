@@ -34,8 +34,3 @@ export const QUERY_PLANTINGS= gql`
   }
 `;
 
-// create mutation for createPlanting
-// create mutation for delete planting
-// create mutation for delete planting
-// create mutation for planted
-// create mutation for seeded

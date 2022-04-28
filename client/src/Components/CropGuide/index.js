@@ -21,9 +21,18 @@ function MydModalWithGrid(props) {
             {props.data?.allCrops?.map(data => (
             <div>
               <Row>
+                <Col xs={6} md={4}>
+                  <img style = {{width:"100%", height: "100%"}} alt="vegetable" src ={`/photos/${data.name}.jpg`}      />         
+                </Col>
+                <Col xs={6} md={4}>Harvest Window: {data.harvestwindow} days</Col>  
+
+                <Col xs={6} md={4}>sowing dates: {data.sowingDates}
+                <br/>
+                </Col>
+                <Row>
                 <Col xs={6} md={4}>{data.name}</Col>
-                <Col xs={6} md={4}>sowing dates: {data.sowingDates}</Col>
-                <Col xs={6} md={4}>Harvest Window: {data.harvestwindow} days</Col>
+
+                </Row> 
               </Row>
               <hr/>
               </div>
