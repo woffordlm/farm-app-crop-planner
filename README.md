@@ -14,7 +14,7 @@
 ## Deployment
 
 - [Github](https://github.com/woffordlm/farm-app-crop-planner)
-- [Heroku](placeholder here)
+- [Heroku](https://mighty-depths-75923.herokuapp.com/)
 
 <img src="https://github.com/woffordlm/farm-app-crop-planner/blob/main/client/public/photos/screenshot1.png?raw=true">
 
