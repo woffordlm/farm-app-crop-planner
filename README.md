@@ -5,7 +5,7 @@
 ## Authors
 
 - [John McNair](https://github.com/mcnairjm)
-- [Dani Reinholz](https://github.com/reinholz36)
+- [Lydia Riverwood](https://github.com/reinholz36)
 - [Jonathan Werz](https://github.com/jdwerz83)
 - [Luke Wofford](https://github.com/woffordlm)
 
